@@ -23,7 +23,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # 构建工作
   build:
     runs-on: ubuntu-latest
     steps:
@@ -32,12 +31,13 @@ jobs:
         with:
           fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
       - uses: pnpm/action-setup@v3 # 使用 pnpm
+        with:
+          version: 7.3.0 # 指定 pnpm 版本
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 16.18.1
           cache: pnpm # 缓存设置为 pnpm
-          version: 7.3.0 # 您可以根据需要指定特定的 pnpm 版本
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Install dependencies
