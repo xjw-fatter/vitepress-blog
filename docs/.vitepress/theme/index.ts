@@ -1,6 +1,7 @@
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
-import { inBrowser, type Theme } from 'vitepress'
+import type { Theme } from "vitepress";
+import { inBrowser, useRoute } from "vitepress";
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 import busuanzi from "busuanzi.pure.js";

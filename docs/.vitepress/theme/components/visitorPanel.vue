@@ -7,14 +7,14 @@
           本站总访问量
           <span id="busuanzi_value_site_pv" class="font-bold">--</span> 次
         </span>
-        <!-- <img
-          src="/heart.gif"
+        <img
+          src="/13337243431490234.jpeg"
           alt="heart"
           class="heart-img"
           width="50"
           height="50"
           @click="onLinkUmiHandle"
-        /> -->
+        />
         <span class="text">
           本站访客数
           <span id="busuanzi_value_site_uv" class="font-bold">--</span> 人次
@@ -29,7 +29,7 @@ import { inBrowser } from "vitepress";
 const onLinkUmiHandle = () => {
   if (inBrowser) {
     window.open(
-      "https://us.umami.is",
+      "https://cloud.umami.is/share/5Hy3m0qNiQcDzf2g/xjw-fatter.github.io",
       "_blank"
     );
   }

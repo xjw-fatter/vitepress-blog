@@ -4,7 +4,17 @@ export default defineConfig({
   title: "My Awesome Project",
   description: "A VitePress Site",
   // header标签里面插入的内容
-  head: [["link", { rel: "icon", href: "/favicon.ico" }]],
+  ignoreDeadLinks: true,
+  head: [
+    ["link", { rel: "icon", href: "/favicon.svg" }],
+    [
+      "script",
+      {
+        src: "https://cloud.umami.is/script.js",
+        "data-website-id": "a6fee6db-cc51-4b66-a529-da38c7febe12",
+      },
+    ],
+  ],
   themeConfig: {
     // 网站的logo
     logo: "/logo.svg",
@@ -35,8 +45,8 @@ export default defineConfig({
     },
     // 文档的最后更新时间
     lastUpdated: {
-    text: "Updated at",
-    formatOptions: {
+      text: "Updated at",
+      formatOptions: {
         dateStyle: "full",
         timeStyle: "medium",
       },
@@ -57,7 +67,7 @@ export default defineConfig({
     ],
     // 社交链接
     socialLinks: [{ icon: "github", link: "https://github.com/ChinaCarlos" }],
-    // 部署的时候需要注意该参数避免样式丢失
-    // base: "/vitepress-blog-template/",
   },
+  // 部署的时候需要注意该参数避免样式丢失
+  base: "/vitepress-blog/",
 });
