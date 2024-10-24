@@ -15,5 +15,6 @@
   "license": "ISC",
   "devDependencies": {
     "vitepress": "^1.4.1"
-  }
+  },
+  "packageManager": "pnpm@8.14.0"
 }
