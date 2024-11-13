@@ -2,65 +2,62 @@
 layout: home
 
 hero:
-  name: "China Carlos's Blog"
-  text: "PWA FAST SDK"
-  tagline: Carlos's Blog Web Site
+  name: "嘻咦昂向"
+  text: "寒雾开白日,余雪映青山"
+  tagline: XiYiAngXiang's Blog Web Site
   image:
-    src: /pwa.svg
+    src: /xiang.png
     alt: VitePress
   actions:
     - theme: brand
-      text: FAST PWA SDK API
-      link: https://carlosme.fun
+      text: 寒雾
+      link: https://github.com/xjw-fatter
     - theme: alt
-      text: PWA 应用案例
-      link: https://carlosme.fun
+      text: 开白日
+      link: https://github.com/xjw-fatter
     - theme: alt
-      text: 我的博客
-      link: https://carlosme.fun
+      text: 余雪
+      link: https://github.com/xjw-fatter
     - theme: alt
-      text: 前端面经
-      link: https://carlosme.fun
-    - theme: alt
-      text: 支持一下
-      link: https://carlosme.fun
+      text: 映青山
+      link: https://github.com/xjw-fatter
 
 features:
-  - title: 什么是PWA渐进式应用？
+  - title: vant4
     icon:
-      src: /light_pwa.svg
-    details: PWA（Progressive Web Application，渐进式 Web 应用）是一种结合了传统 Web 应用与原生移动应用优势的应用程序。PWA 利用现代 Web 技术提供用户体验接近原生应用的 Web 应用
-    link: https://carlosme.fun
+      src: /xi.png
+    details: Vant 是一个轻量、可定制的移动端组件库
+    link: https://vant-ui.github.io/vant/#/zh-CN/home
     linkText: 查看详情
-  - title: PWA 是如何构建的？
+  - title: uView
     icon:
-      src: /config.svg
-    details: 构建一个 PWA（渐进式 Web 应用）涉及多个关键技术和步骤，以确保应用具备离线能力、快速加载、可安装性等核心特性。以下是构建 PWA 的主要步骤和技术。
-    link: https://carlosme.fun
+      src: /xi.png
+    details: uView UI，是uni-app生态最优秀的UI框架，全面的组件和便捷的工具会让您信手拈来，如鱼得水 
+    link: https://v1.uviewui.com
     linkText: 查看详情
-  - title: PWA 应用的优势有哪些？
+  - title: IT - TOOLS 
     icon:
-      src: /lightning.svg
-    details: PWA 结合了 Web 应用的普遍可用性和原生应用的用户体验，是一种低成本、高效能的跨平台应用开发解决方案，通过提供离线能力、推送通知、可安装性等特性，能够在保持用户体验的同时，降低开发、维护和分发成本。
-    link: https://carlosme.fun
+      src: /xi.png
+    details: 助力开发人员和 IT 工作者
+    link: https://it-tools.tech/
     linkText: 查看详情
-  - title: 如何快速开发一个PWA应用？
+  - title: 标小智
     icon:
-      src: /terminal.svg
-    details: 要快速开发一个 PWA 应用，可以遵循以下步骤。这些步骤涵盖了从设置基础项目到实现 PWA 核心特性的所有内容。
-    link: https://carlosme.fun
+      src: /ha.png
+    details: 人工智能为您在线LOGO设计，生成企业VI，打造个性品牌！
+    link: https://www.logosc.cn/favicon-generator
     linkText: 查看详情
-  - title: PWA 的使用场景有哪些？
+  - title: 非猪AI导航
     icon:
-      src: /mode.svg
-    details: PWA 的应用场景非常广泛，其核心优势包括离线支持、跨平台兼容、安装便捷性等，使其适用于各种类型的应用和服务。无论是商业、教育、医疗还是娱乐领域，PWA 都能够提供流畅、高效和可靠的用户体验。
-    link: https://carlosme.fun
+      src: /ha.png
+    details: 非猪ai导航,为你收集整理推荐国内外人工智能网址导航网站,文字写作,图片,音频,视频,代码等各种高效工具,让你遍览人工智能服务,先人一步,畅享未来!飞起来!
+    link: https://feizhuke.com/
     linkText: 查看详情
-  - title: PWA 周边生态
+  - title: tinypng
     icon:
-      src: /earth.svg
-    details: PWA（渐进式Web应用）生态包括Service Workers、Web App Manifest、响应式设计、离线支持、推送通知和应用缓存等技术，旨在提升Web应用的性能和用户体验，接近原生应用的功能。
-    link: https://carlosme.fun
+      src: /ha.png
+    details: 在线压缩器使您能够轻松优化图像。无缝转换为WebP或有效压缩大量批处理以最小化文件大小，一切都很容易。
+    link: https://tinypng.com/
     linkText: 查看详情
 ---
 

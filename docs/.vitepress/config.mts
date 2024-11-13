@@ -1,12 +1,12 @@
 import { defineConfig } from "vitepress";
 
 export default defineConfig({
-  title: "My Awesome Project",
-  description: "A VitePress Site",
+  title: "嘻咦昂向",
+  description: "XiYiAngXiang's Blog",
   // header标签里面插入的内容
   ignoreDeadLinks: true,
   head: [
-    ["link", { rel: "icon", href: "/favicon.svg" }],
+    ["link", { rel: "icon", href: "/favicon.ico" }],
     [
       "script",
       {
@@ -17,7 +17,7 @@ export default defineConfig({
   ],
   themeConfig: {
     // 网站的logo
-    logo: "/logo.svg",
+    logo: "/favicon.ico",
     // 文章右侧大纲目录
     outline: {
       level: [2, 6],
@@ -41,11 +41,11 @@ export default defineConfig({
     // 页脚
     footer: {
       message: "Released under the MIT License.",
-      copyright: "Copyright © 2023-present China Carlos",
+      copyright: "Copyright © 2024-present XiYiAngXiang",
     },
     // 文档的最后更新时间
     lastUpdated: {
-      text: "Updated at",
+      text: "更新时间",
       formatOptions: {
         dateStyle: "full",
         timeStyle: "medium",
@@ -66,7 +66,7 @@ export default defineConfig({
       },
     ],
     // 社交链接
-    socialLinks: [{ icon: "github", link: "https://github.com/ChinaCarlos" }],
+    socialLinks: [{ icon: "github", link: "https://github.com/xjw-fatter" }],
   },
   // 部署的时候需要注意该参数避免样式丢失
   base: "/vitepress-blog/",
