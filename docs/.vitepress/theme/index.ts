@@ -7,6 +7,8 @@ import './style.css'
 import busuanzi from "busuanzi.pure.js";
 import visitorPanel from "./components/visitorPanel.vue";
 import confetti from "./components/confetti.vue";
+import navLinks from "./components/navLinks.vue";
+
 
 export default {
   extends: DefaultTheme,
@@ -19,6 +21,7 @@ export default {
     // ...
     app.component("confetti", confetti);
     app.component("VisitorPanel", visitorPanel);
+    app.component("navLinks", navLinks);
     if (inBrowser) {
       router.onAfterRouteChanged = () => {
         busuanzi.fetch();

@@ -19,5 +19,9 @@
     "canvas-confetti": "^1.9.3",
     "vitepress": "^1.4.1",
     "vue": "^3.5.12"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "vitepress-sidebar": "^1.25.0"
   }
 }
