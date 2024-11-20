@@ -1,13 +1,17 @@
 ---
-layoutClass: nav-layout
+layout: doc
+pageClass: my-nav-layout
 # outline: [2, 3, 4]
 ---
 
 <script setup>
-import { NAV_DATA } from './data'
+import { NAV_DATA } from './navData'
 </script>
-<style >
-    .m-nav-layout {
+<style lang="scss">
+.my-nav-layout {
+  .my-nav-desc{
+    
+  }
   /* 覆盖全局的 vp-layout-max-width（仅当前页面使用） */
   --vp-layout-max-width: 1660px;
 
@@ -28,6 +32,7 @@ import { NAV_DATA } from './data'
 
   /* custom-block */
   .custom-block {
+    background: var(--my-custom-block-tip-bg);
     .custom-block-title {
       font-size: var(--vp-custom-block-font-size);
     }
@@ -45,7 +50,11 @@ import { NAV_DATA } from './data'
 }
 </style>
 
-# 前端导航
+# 导航
+
+<div class="custom-block">
+  <div>一些乱七八糟的网址导航～</div>
+</div>
 
 <navLinks v-for="{title, items} in NAV_DATA" :title="title" :items="items"/>
 

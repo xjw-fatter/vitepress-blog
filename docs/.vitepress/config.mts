@@ -41,8 +41,8 @@ export default defineConfig({
     },
     // 页脚
     footer: {
-      message: "Released under the MIT License.",
-      copyright: "Copyright © 2024-present XiYiAngXiang",
+      message: "Copyright © 2024-present XiYiAngXiang",
+      copyright: "ICP许可证号 鄂ICP备2021012299号-1",
     },
     // 文档的最后更新时间
     lastUpdated: {
@@ -57,6 +57,6 @@ export default defineConfig({
     // 社交链接
     socialLinks: [{ icon: "github", link: "https://github.com/xjw-fatter" }],
   },
-  // 部署的时候需要注意该参数避免样式丢失
+  // 部署的时候需要注意该参数避免样式丢失 Github Pages需要与仓库同名/vitepress-blog/ 域名根目录则 /
   base: "/vitepress-blog/",
 });
