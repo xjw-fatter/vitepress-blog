@@ -1,121 +1,85 @@
----
-title: VitePress集成UnoCss
-lang: zh
-excerpt: VitePress集成UnoCss
----
-### 起因
+# Markdown Extension Examples
+2222
+This page demonstrates some of the built-in markdown extensions provided by VitePress.
 
-最近搭建了一个VitePress程序，由于markdown文档中添加了一些css代码辅助布局，故此在系统中引入Unocss
+## Syntax Highlighting
 
-### 过程
+VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
 
-1. 引入Unocss模块
+**Input**
 
-```cmd
-npm install unocss --save-dev  
-```
-
-2. 创建一个unocss.config.ts
-
-unocss规则都写在这个文件中
-
-```ts
-import {
-  defineConfig,
-  presetAttributify,
-  presetIcons,
-  presetTypography,
-  presetUno,
-  presetWebFonts,
-  transformerDirectives,
-  transformerVariantGroup,
-} from 'unocss'
-
-export default defineConfig({
-  // 其他规则...
-  theme: {
-    fontFamily: {
-      sans: 'Computer Modern Sans, LXGW WenKai, HKST',
-    },
-    boxShadow: {
-      nav: '0 1px 8px 0 rgba(27, 35, 47, .1)',
-    },
-    colors: {
-      brand: '#1772d0',
-    },
-    maxWidth: {
-      content: '90ch',
-    },
-  },
-  presets: [
-    presetUno(),
-    presetAttributify(),
-    presetIcons({
-      scale: 1.2,
-      warn: true,
-      extraProperties: {
-        'display': 'inline-block',
-        'vertical-align': 'sub',
-      },
-    }),
-    presetTypography(),
-    presetWebFonts({
-      fonts: {
-        ui: 'DM Sans:400,700',
-      },
-    }),
-  ],
-  transformers: [transformerDirectives(), transformerVariantGroup()]
-  // 其他规则...
-})
-```
-
-3. 修改config.mts
-
-在config中添加vite属性，并在plugins中引入UnoCss
-
-```ts
-import { defineConfig } from 'vitepress'
-import UnoCSS from 'unocss/vite';
-import UnoCssConfig from '../unocss.config'
-
-// https://vitepress.dev/reference/site-config
-export default defineConfig({
-  // 其他属性...
-  // 参考自 https://github.com/vuejs/vitepress/issues/2424
-  vite: {
-    optimizeDeps: {
-      exclude: ['vitepress']
-    },
-    server: {
-      hmr: {
-        overlay: false
-      }
-    },
-    plugins: [
-      UnoCSS(UnoCssConfig)
-    ]
+````md
+```js{4}
+export default {
+  data () {
+    return {
+      msg: 'Highlighted!'
+    }
   }
-  // 其他属性...
-})
+}
+```
+````
+
+**Output**
+
+```js{4}
+export default {
+  data () {
+    return {
+      msg: 'Highlighted!'
+    }
+  }
+}
 ```
 
-### 最后
+## Custom Containers
 
-至此，md文档中就可以使用如下格式的写法啦
+**Input**
 
-```html
-<div flex justify-between items-end>
-  <div text-2xl sm:text-4xl font-bold>
-    <div>Hi, I'm <span text-c-dark>lYuanC</span>👋。</div>
-    <div flex>Java <Developer ml-3 /></div>
-    <Links :links="frontmatter.socials" mt-5/>
-  </div>
-  <div 
-    class="p-1 mb-1 border border-c rounded-full hidden md:block"
-    shadow="[inset_0_0_10px_#000000] slate-200 dark:slate-800"
-  >
-    <FlipImage class="!w-40" src="/avatar.png" alt="avatar" />
-  </div>
-</div>
+```md
+::: info
+This is an info box.
+:::
 
+::: tip
+This is a tip.
+:::
+
+::: warning
+This is a warning.
+:::
+
+::: danger
+This is a dangerous warning.
+:::
+
+::: details
+This is a details block.
+:::
+```
+
+**Output**
+
+::: info
+This is an info box.
+:::
+
+::: tip
+This is a tip.
+:::
+
+::: warning
+This is a warning.
+:::
+
+::: danger
+This is a dangerous warning.
+:::
+
+::: details
+This is a details block.
+:::
+
+## More
+
+Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).

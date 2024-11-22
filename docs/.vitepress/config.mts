@@ -59,4 +59,27 @@ export default defineConfig({
   },
   // 部署的时候需要注意该参数避免样式丢失 Github Pages需要与仓库同名/vitepress-blog/ 域名根目录则 /
   base: "/vitepress-blog/",
+  vite: {
+    // Vite 配置选项
+    server: {
+      host: "0.0.0.0",
+      port: 5173, // 启动端口
+      // hmr: {
+      //   host: '127.0.0.1',
+      //   port: 5300,
+      //   overlay: false,
+      // },
+      hmr: true,
+      open: false, // 服务启动时自动在浏览器中打开应用
+      cors: true, // 为开发服务器配置 CORS , 默认启用并允许任何源
+      strictPort: false, // 设为true时端口被占用则直接退出，不会尝试下一个可用端口
+      proxy: {
+        "/api": {
+          target: "your https address",
+          changeOrigin: true,
+          rewrite: (path: string) => path.replace(/^\/api/, ""),
+        },
+      },
+    },
+  },
 });

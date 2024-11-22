@@ -71,6 +71,6 @@ export const sidebar: DefaultTheme.Config["sidebar"] =
 // nav
 export const nav: DefaultTheme.Config["nav"] = [
     { text: "首页", link: "/" },
-    { text: "Examples", link: "/pages/examples/markdown" },
     { text: "导航", link: "/pages/nav/index" },
+    { text: "Examples", link: "/pages/examples/markdown" },
 ];

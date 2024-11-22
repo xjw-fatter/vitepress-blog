@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { NavDataItem } from "../../../pages/nav/navData";
+import { computed, ref } from "vue";
+import { NavDataItem } from "../../../pages/nav/constants/nav";
 import { withBase } from "vitepress";
 const props = defineProps<{
     title: string;
@@ -13,16 +13,23 @@ const formatTitle = computed(() => {
 const onLinkClick = (link: string) => {
     window.open(link, "_blank");
 };
+
+const showMore = ref(true)
+const onTitleClick = ()=>{
+    showMore.value = !showMore.value;
+}
+
 </script>
 
 <template>
-    <h2 v-if="title" :id="formatTitle" tabindex="-1">
-        {{ title }}
+    <h4 v-if="title" :id="formatTitle" tabindex="-1" class="nav-links-title" >
+        <div>{{ title }}</div>
         <a class="header-anchor" :href="`#${formatTitle}`" aria-hidden="true"></a>
-    </h2>
-    <div class="nav-links">
+        <div class="vpi-chevron-right caret-icon arrow" :class="[showMore && 'down']" @click="onTitleClick()"></div>
+    </h4>
+    <div class="nav-links" v-show="showMore">
         <div v-for="{ icon, title, desc, link } in items" :key="link" @click="onLinkClick(link)" class="nav-link" :id="formatTitle">
-            <article class="box">
+            <div class="box">
                 <div class="box-header">
                     <div v-if="typeof icon === 'object'" class="icon" v-html="icon.svg"></div>
                     <div v-else-if="icon && typeof icon === 'string'" class="icon">
@@ -31,12 +38,13 @@ const onLinkClick = (link: string) => {
                     <h5 v-if="title"  class="title">{{ title }}</h5>
                 </div>
                 <div v-if="desc" class="desc">{{ desc }}</div>
-            </article>
+            </div>
         </div>
     </div>
 </template>
 
 <style scoped lang="scss">
+
 .nav-links {
     --my-nav-gap: 10px;
     display: grid;
@@ -46,6 +54,17 @@ const onLinkClick = (link: string) => {
     grid-auto-flow: row dense;
     justify-content: center;
     margin-top: var(--my-nav-gap);
+    &-title{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        .arrow{
+            padding-left: 60px;
+            &.down{
+                transform: rotate(90deg);
+            }
+        }
+    }
 }
 
 @each $media, $size in (500px: 140px, 640px: 155px, 768px: 175px, 960px: 200px, 1440px: 240px) {

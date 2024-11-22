@@ -5,7 +5,7 @@ pageClass: my-nav-layout
 ---
 
 <script setup>
-import { NAV_DATA } from './navData'
+import { NAV_DATA } from "../../share/constants/index"
 </script>
 <style lang="scss">
 .my-nav-layout {
