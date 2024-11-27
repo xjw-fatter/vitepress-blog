@@ -1,6 +1,6 @@
 import { DefaultTheme } from "vitepress";
 import { generateSidebar, VitePressSidebarOptions } from "vitepress-sidebar";
-
+// https://vitepress-sidebar.cdget.com/zhHans/
 // sidebar配置
 const defaultOptions: VitePressSidebarOptions = {
     // 基本配置
@@ -21,12 +21,12 @@ const defaultOptions: VitePressSidebarOptions = {
     includeFolderIndexFile: false, // 是否包含文件夹的索引文件
     useTitleFromFileHeading: true, // 是否从文件的标题中提取侧边栏项的标题。
     useTitleFromFrontmatter: true, // 是否从前事项中提取侧边栏项的标题
-    useFolderTitleFromIndexFile: false, // 是否从文件夹的索引文件中提取文件夹的标题
+    useFolderTitleFromIndexFile: true, // 是否从文件夹的索引文件中提取文件夹的标题
     useFolderLinkFromIndexFile: false, // 是否从文件夹的索引文件中提取文件夹的链接。
     useFolderLinkFromSameNameSubFile: true, // 是否从同名子文件中提取文件夹的链接。
     includeDotFiles: false, // 是否包含以点开头的文件。
     folderLinkNotIncludesFileName: true, // 文件夹链接是否不包含文件名。
-    includeEmptyFolder: true, // 是否包含空文件夹
+    includeEmptyFolder: false, // 是否包含空文件夹
     // 排序
     sortMenusByName: false, // 是否按名称排序菜单项
     sortMenusByFrontmatterOrder: false, // 是否按前事项中的顺序排序菜单项
@@ -38,7 +38,7 @@ const defaultOptions: VitePressSidebarOptions = {
     sortFolderTo: null, // 文件夹在侧边栏中的位置，可以是 top 或 bottom。
     // 其他
     keepMarkdownSyntaxFromTitle: false, // 是否保留标题中的 Markdown 语法
-    debugPrint: false, // 是否打印调试信息。
+    debugPrint: true, // 是否打印调试信息。
     // manualSortFileNameByPriority: [], // 手动指定文件名的优先级排序
     // excludePattern: [], // 排除匹配模式的文件或文件夹。
     // excludeFilesByFrontmatterFieldName: "", // 排除前事项中指定字段的文件。
@@ -60,9 +60,21 @@ const sideBarData: VitePressSidebarOptions[] = [
     },
     {
         ...defaultOptions,
-        documentRootPath: "/docs", // 文档的根目录路径。例如 /docs
-        scanStartPath: "pages/nav", // 开始扫描文档的路径。例如 pages。这个路径是相对于 documentRootPath 的
-        resolvePath: "pages/nav/", // 解析文件路径的基目录。例如 examples/
+        documentRootPath: "/docs",
+        scanStartPath: "pages/nav",
+        resolvePath: "pages/nav/",
+    },
+    {
+        ...defaultOptions,
+        documentRootPath: "/docs",
+        scanStartPath: "pages/games",
+        resolvePath: "pages/games/",
+    },
+    {
+        ...defaultOptions,
+        documentRootPath: "/docs",
+        scanStartPath: "pages/notes",
+        resolvePath: "pages/notes/",
     },
 ];
 export const sidebar: DefaultTheme.Config["sidebar"] =
@@ -72,5 +84,11 @@ export const sidebar: DefaultTheme.Config["sidebar"] =
 export const nav: DefaultTheme.Config["nav"] = [
     { text: "首页", link: "/" },
     { text: "导航", link: "/pages/nav/index" },
-    { text: "Examples", link: "/pages/examples/markdown" },
+    {
+        text: "笔记",
+        items: [
+            { text: "百度一下", link: "https://www.baidu.com" },
+            { text: "CSS", link: "/pages/notes/css/" },
+        ],
+    },
 ];

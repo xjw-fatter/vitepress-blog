@@ -1,7 +1,7 @@
 ---
 layout: doc
 pageClass: my-nav-layout
-# outline: [2, 3, 4]
+description: 收录了一些站点，方便简单便捷的查看某些网址
 ---
 
 <script setup>
@@ -9,9 +9,6 @@ import { NAV_DATA } from "../../share/constants/index"
 </script>
 <style lang="scss">
 .my-nav-layout {
-  .my-nav-desc{
-    
-  }
   /* 覆盖全局的 vp-layout-max-width（仅当前页面使用） */
   --vp-layout-max-width: 1660px;
 

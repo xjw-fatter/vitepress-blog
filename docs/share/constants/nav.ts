@@ -1,5 +1,5 @@
 import { NavData } from "../types/index.type";
-
+// AI FILM GAME VUE ANGULAR JAVASCRIPT CSS TOOL MINIPROGRAM NODE CHART BUILD SITE_GRNERATE ICONS LEARN HUB
 const AI_NAV: NavData = {
     title: "AI 导航",
     items: [
@@ -54,7 +54,7 @@ const AI_NAV: NavData = {
             link: "https://yuanbao.tencent.com",
         },
         {
-            icon: "https://cdn-bot.hunyuan.tencent.com/logo.png",
+            icon: "https://www.baidu.com/favicon.ico",
             title: "百度AI助手",
             link: "https://chat.baidu.com",
         },
@@ -91,6 +91,30 @@ const FILM_NAV: NavData = {
             title: "梦想影院",
             desc: "每日更新最新电影、综艺、电视剧、动漫、美剧等影视！",
             link: "https://www.mxyyw.vip/",
+        },
+        {
+            icon: "/icons/xi.png",
+            title: "LIBVIO",
+            desc: "LIBVIO发布页",
+            link: "https://www.libvio.app/",
+        },
+        {
+            icon: "/icons/xi.png",
+            title: "freeok",
+            desc: "FreeOK,追剧也很卷",
+            link: "https://www.freeok.pro/",
+        },
+        {
+            icon: "/icons/zjtu.png",
+            title: "追剧兔",
+            desc: "专注影视的门户网站",
+            link: "https://www.zjtu.me/",
+        },
+        {
+            icon: "https://nav.acgsq.com/favorites.png",
+            title: "ACG导航",
+            desc: "欢迎来到动漫世界，这里是二次元文化的宝库，我们致力于为广大动漫爱好者提供专属二次元圈子的导航网站。",
+            link: "https://nav.acgsq.com/acgdh",
         },
     ],
 };
@@ -345,10 +369,28 @@ const TOOL_NAV: NavData = {
             link: "https://tool.lu",
         },
         {
+            icon: "https://it-tools.tech/favicon.ico",
+            title: "IT - TOOLS",
+            desc: "助力开发人员和 IT 工作者",
+            link: "https://it-tools.tech/",
+        },
+        {
             icon: "https://static.json.cn/r/img/favicon/favicon.ico",
             title: "Json.cn",
             desc: "JSON 在线解析及格式化验证",
             link: "https://www.json.cn",
+        },
+        {
+            icon: "https://static.clewm.net/static/images/favicon.ico",
+            title: "草料二维码",
+            desc: "一站式二维码生成工具，免费可用。",
+            link: "https://cli.im/",
+        },
+        {
+            icon: "https://moakt.com/favicon.ico",
+            title: "Moakt Email",
+            desc: "临时邮箱专业服务",
+            link: "https://moakt.com/",
         },
     ],
 };
@@ -455,6 +497,7 @@ const CHART_NAV: NavData = {
         },
     ],
 };
+
 const BUILD_NAV: NavData = {
     title: "编译&构建&打包",
     items: [
@@ -539,9 +582,8 @@ const SITE_GRNERATE_NAV: NavData = {
     ],
 }
 
-
 const ICONS_NAV: NavData = {
-    title: "图标库",
+    title: "图标",
     items: [
         {
             icon: "https://img.alicdn.com/imgextra/i4/O1CN01Z5paLz1O0zuCC7osS_!!6000000001644-55-tps-83-82.svg",
@@ -556,10 +598,10 @@ const ICONS_NAV: NavData = {
             link: "https://iconpark.oceanengine.com/official",
         },
         {
-            icon: "https://emoji.muan.co/appicon.png",
-            title: "Emoji searcher",
-            desc: "Emoji 表情大全",
-            link: "",
+            icon: "https://www.logosc.cn/img/logo-icons/logosc-new.svg",
+            title: "标小智",
+            desc: "人工智能为您在线LOGO设计，生成企业VI，打造个性品牌！",
+            link: "https://www.logosc.cn/favicon-generator",
         },
     ],
 }
@@ -568,7 +610,7 @@ const LEARN_NAV: NavData = {
     title: "学习资料",
     items: [
         {
-            icon: "https://developer.mozilla.org/apple-touch-icon.6803c6f0.png",
+            icon: "/icons/mozilla.png",
             title: "MDN | Web 开发者指南",
             desc: "Mozilla 的开发者平台，提供了大量关于 HTML、CSS 和 JavaScript 的详细文档以及广泛的 Web API 参考资",
             link: "https://developer.mozilla.org/zh-CN",
@@ -580,7 +622,7 @@ const LEARN_NAV: NavData = {
             link: "https://www.runoob.com",
         },
         {
-            icon: "/icons/es6.svg",
+            icon: "https://es6.ruanyifeng.com/images/cover_thumbnail_3rd.jpg",
             title: "ES6 入门教程",
             desc: "阮一峰的网络日志",
             link: "http://es6.ruanyifeng.com",
@@ -631,8 +673,7 @@ const HUB_NAV: NavData = {
         },
         {
             title: "博客园",
-            // icon: 'https://common.cnblogs.com/favicon.ico',
-            icon: "/icons/cnblogs.svg",
+            icon: '/icons/cnblogs.svg',
             desc: "博客园是一个面向开发者的知识分享社区",
             link: "https://www.cnblogs.com",
         },
