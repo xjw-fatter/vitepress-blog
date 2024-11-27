@@ -55,14 +55,8 @@ const sideBarData: VitePressSidebarOptions[] = [
     {
         ...defaultOptions,
         documentRootPath: "/docs", // 文档的根目录路径。例如 /docs
-        scanStartPath: "pages/examples", // 开始扫描文档的路径。例如 pages。这个路径是相对于 documentRootPath 的
-        resolvePath: "pages/examples/", // 解析文件路径的基目录。例如 examples/
-    },
-    {
-        ...defaultOptions,
-        documentRootPath: "/docs",
-        scanStartPath: "pages/nav",
-        resolvePath: "pages/nav/",
+        scanStartPath: "pages/nav", // 开始扫描文档的路径。例如 pages。这个路径是相对于 documentRootPath 的
+        resolvePath: "pages/nav/", // 解析文件路径的基目录。例如 examples/
     },
     {
         ...defaultOptions,
@@ -83,12 +77,13 @@ export const sidebar: DefaultTheme.Config["sidebar"] =
 // nav
 export const nav: DefaultTheme.Config["nav"] = [
     { text: "首页", link: "/" },
+    { text: "笔记", link: "/pages/notes/css/" },
     { text: "导航", link: "/pages/nav/index" },
     {
         text: "笔记",
         items: [
-            { text: "百度一下", link: "https://www.baidu.com" },
-            { text: "CSS", link: "/pages/notes/css/" },
+            { text: "百度", link: "https://kaifa.baidu.com/" },
+            { text: "掘金", link: "https://juejin.cn/frontend" },
         ],
     },
 ];

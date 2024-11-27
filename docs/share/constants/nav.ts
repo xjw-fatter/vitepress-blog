@@ -1,5 +1,5 @@
 import { NavData } from "../types/index.type";
-// AI FILM GAME VUE ANGULAR JAVASCRIPT CSS TOOL MINIPROGRAM NODE CHART BUILD SITE_GRNERATE ICONS LEARN HUB
+// AI FILM GAME VUE ANGULAR JAVASCRIPT CSS TOOL MINIPROGRAM NODE CHART BUILD SITE_GRNERATE ICONS LEARN HUB OTHER
 const AI_NAV: NavData = {
     title: "AI 导航",
     items: [
@@ -260,6 +260,12 @@ const VUE_NAV: NavData = {
             desc: "字节跳动出品的企业级设计系统",
             link: "https://arco.design/",
         },
+        {
+            icon: "https://vue-data-ui.graphieros.com/favicon.ico",
+            title: "Vue Data UI",
+            desc: "一个赋予用户权力的数据可视化 Vue3 组件库，用于巧妙地叙述数据故事。",
+            link: "https://vue-data-ui.graphieros.com/",
+        },
     ],
 };
 
@@ -321,23 +327,30 @@ const CSS_NAV: NavData = {
     title: "CSS",
     items: [
         {
-            icon: "https://postcss.org/assets/logo-3e39b0aa.svg",
+            icon: "https://postcss.org/assets/postcss-CsElRNOW.svg",
             title: "PostCSS",
             desc: "一个用 JavaScript 转换 CSS 的工具",
             link: "https://postcss.org",
         },
         {
-            icon: "https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg",
+            icon: "https://sass-lang.com/assets/img/logos/logo.svg",
             title: "Sass",
             desc: "一个成熟，稳定，功能强大的专业级 CSS 扩展语言",
             link: "https://sass-lang.com",
         },
         {
-            icon: "https://www.tailwindcss.cn/apple-touch-icon.png",
+            icon: "https://www.tailwindcss.cn/favicons/favicon-32x32.png?v=3",
             title: "TailwindCSS 中文网",
             desc: "一个功能类优先的 CSS 框架",
             link: "https://www.tailwindcss.cn",
         },
+        {
+            icon: "http://www.unocss.cn/favicon.svg",
+            title: "UnoCSS",
+            desc: "即时按需原子化 CSS 引擎",
+            link: "http://www.unocss.cn/",
+        },
+        
     ],
 };
 
@@ -392,6 +405,80 @@ const TOOL_NAV: NavData = {
             desc: "临时邮箱专业服务",
             link: "https://moakt.com/",
         },
+        {
+            icon: "/icons/c-runoob-logo.ico",
+            title: "菜鸟工具",
+            desc: "菜鸟工具,网址导航,在线工具",
+            link: "https://www.jyshare.com/",
+        },
+        {
+            icon: "/icons/codepen.ico",
+            title: "CodePen",
+            desc: "构建、共享和学习JavaScript、CSS和HTML。",
+            link: "https://codepen.io/",
+        },
+        {
+            icon: "https://stackblitz.com/_astro/favicon.svg",
+            title: "StackBlitz",
+            desc: "面向web开发人员的基于浏览器的协作IDE。StackBlitz消除了耗时的本地配置，让开发人员花更多的时间进行构建。",
+            link: "https://stackblitz.com/",
+        },
+        {
+            icon: "https://www.itdog.cn/favicon.ico",
+            title: "ITDOG",
+            desc: "为IT运维人员提供实用的工具，多地ping测试、多地tcping测试、网站测速、HTTP测速、API测速、路由追踪、在线MTR 、DNS查询等。",
+            link: "https://www.itdog.cn/",
+        },
+        {
+            icon: "https://snippet-generator.app/favicon-32x32.png",
+            title: "代码片段生产器",
+            desc: "Snippet generator for Visual Studio Code, Sublime Text and Atom. Enjoy :-)",
+            link: "https://snippet-generator.app/?description=&tabtrigger=&snippet=&mode=vscode",
+        },
+        {
+            icon: "https://picsum.photos/assets/images/favicon/favicon-32x32.png",
+            title: "Lorem Picsum",
+            desc: "随机图片",
+            link: "https://picsum.photos/",
+        },
+        {
+            icon: "https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico",
+            title: "阿里云网络拨测工具",
+            desc: "提供强大的网络拨测工具，通过全球各地探测点对服务做http, ping, dns, 路由等拨测，检测网络质量分析服务故障；免费支持查询全球IP地址地理位置，准确靠谱。",
+            link: "https://boce.aliyun.com/detect/http",
+        },
+        {
+            icon: "https://statics.fontke.com/fontke/images/in-logo.png",
+            title: "在线字体提取",
+            desc: "在线字体提取工具,字体子集生成器 - 在线工具 - 字客网",
+            link: "https://www.fontke.com/tool/subfont/",
+        },
+        {
+            icon: "https://transfonter.org/favicon.ico",
+            title: "transfonter",
+            desc: "使用css和HTML示例文件将任何TTF、OTF、WOFF、WOFF2或SVG字体转换为css@font-face格式。",
+            link: "https://transfonter.org/",
+        },
+        {
+            icon: "https://msdn.itellyou.cn/images/itellyou.cn.png",
+            title: "MSDN,我告诉你",
+            desc: "MSDN, 我告诉你 - 做一个安静的工具站",
+            link: "https://msdn.itellyou.cn/",
+        },
+        {
+            icon: "https://tool.lmeee.com/static/images/common/logo.png",
+            title: "拉米工具",
+            desc: "为您提供网速测试,万年历,手机号码归属地查询,快递查询,IP查询,站长工具,代码转换,实时汇率等实用的在线小工具，做大家日常生活工作的好帮手。",
+            link: "https://tool.lmeee.com/",
+        },
+        {
+            icon: "https://tool.lmeee.com/static/images/common/logo.png",
+            title: "IDE激活网",
+            desc: "各类开发工具和办公工具的激活码下载和绿色版软件下载。",
+            link: "https://blog.idejihuo.com/",
+        },
+
+        
     ],
 };
 
@@ -405,10 +492,10 @@ const MINIPROGRAM_NAV: NavData = {
             link: "https://developers.weixin.qq.com/miniprogram/dev/framework/",
         },
         {
-            icon: "/icons/taro.svg",
-            title: "Taro",
-            desc: "多端统一开发解决方案",
-            link: "https://taro.jd.com",
+            icon: "https://res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png",
+            title: "微信公共错误码",
+            desc: "微信返回码说明",
+            link: "https://developers.weixin.qq.com/doc/oplatform/Return_codes/Return_code_descriptions_new.html",
         },
         {
             icon: "https://web-assets.dcloud.net.cn/unidoc/zh/icon.png",
@@ -421,6 +508,24 @@ const MINIPROGRAM_NAV: NavData = {
             title: "Mpx",
             desc: "增强型跨端小程序框架",
             link: "https://mpxjs.cn",
+        },
+        {
+            icon: "https://img.alicdn.com/tfs/TB1qEwuzrj1gK0jSZFOXXc7GpXa-32-32.ico",
+            title: "支付宝小程序文档",
+            desc: "支付宝小程序官方开发者文档",
+            link: "https://opendocs.alipay.com/mini/developer?pathHash=d3c1799e",
+        },
+        {
+            icon: "https://v1.uviewui.com/common/logo.png",
+            title: "uView",
+            desc: "uni-app生态,多平台快速开发的UI框架",
+            link: "https://v1.uviewui.com/",
+        },
+        {
+            icon: "https://tmui.design/images/tmui-black.png",
+            title: "TMUI",
+            desc: "Vue3 TS Pinia Vite跨端组件库",
+            link: "https://tmui.design/",
         },
     ],
 };
@@ -556,7 +661,7 @@ const SITE_GRNERATE_NAV: NavData = {
             link: "https://astro.build",
         },
         {
-            icon: "https://cn.vuejs.org/logo.svg",
+            icon: "https://vitepress.dev/vitepress-logo-mini.svg",
             title: "VitePress",
             desc: "由 Vite 和 Vue 驱动的静态网站生成器",
             link: "https://vitepress.dev",
@@ -627,12 +732,7 @@ const LEARN_NAV: NavData = {
             desc: "阮一峰的网络日志",
             link: "http://es6.ruanyifeng.com",
         },
-        {
-            icon: "https://momoyu.cc/icon-192.png",
-            title: "摸摸鱼热榜",
-            desc: '聚合每日热门、搞笑、有趣、适合摸鱼的资讯',
-            link: "https://momoyu.cc",
-        },
+
     ],
 }
 
@@ -686,6 +786,73 @@ const HUB_NAV: NavData = {
     ],
 }
 
+const OTHER_NAV: NavData = {
+    title:"其它",
+    items:[
+        {
+            icon: "https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico",
+            title: "微信公众平台",
+            desc: "微信公众平台，给个人、企业和组织提供业务服务与用户管理能力的全新服务平台。",
+            link: "https://mp.weixin.qq.com/",
+        },
+        {
+            icon: "https://gtimg.wechatpay.cn/core/favicon.ico",
+            title: "微信支付",
+            desc: "微信支付是腾讯公司的支付业务品牌，微信支付商户平台支持线下场所、公众号、小程序、PC网站、APP、企业微信等经营场景快速接入微信支付。微信支付全面打通O2O生活消费领域，提供专业的互联网+行业解决方案，微信支付支持微信红包和微信理财通，是移动支付的首选。",
+            link: "https://pay.weixin.qq.com/index.php/core/home/login?return_url=%2F",
+        },
+        {
+            icon: "https://gtimg.wechatpay.cn/core/favicon.ico",
+            title: "微信支付合作伙伴平台",
+            desc: "微信支付合作伙伴平台支持合作伙伴为商家快速在线下场所、公众号、小程序、PC网站、APP等场景接入微信支付，同时合作伙伴可为商家基于平台经营能力提供多样化的增值服务。微信支付未来会开放更多样化能力，与合作伙伴共建支付生态。",
+            link: "https://pay.weixin.qq.com/index.php/partner/public/home",
+        },
+        {
+            icon: "https://mail.qq.com/zh_CN/htmledition/images/favicon/qqmail_favicon_32h.png",
+            title: "QQ邮箱",
+            desc: "QQ邮箱，为亿万用户提供高效稳定便捷的电子邮件服务。",
+            link: "https://wx.mail.qq.com",
+        },
+        {
+            icon: "https://cloudcache.tencent-cloud.com/qcloud/favicon.ico?t=201902181234",
+            title: "腾讯云",
+            desc: "腾讯云(tencent cloud)为数百万的企业和开发者提供安全稳定的云计算服务，涵盖云服务器、云数据库、云存储、视频与CDN、域名注册等全方位云服务和各行业解决方案。",
+            link: "https://cloud.tencent.com/",
+        },
+        {
+            icon: "https://img.alicdn.com/tfs/TB1qEwuzrj1gK0jSZFOXXc7GpXa-32-32.ico",
+            title: "支付宝",
+            desc: "欢迎登录支付宝",
+            link: "https://auth.alipay.com/login/ant_sso_index.htm?goto=https%3A%2F%2Fopenhome.alipay.com%2Fplatform%2FdeveloperIndex.htm",
+        },
+        {
+            icon: "https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico",
+            title: "阿里云",
+            desc: "阿里巴巴集团旗下公司，是全球领先的云计算及人工智能科技公司之一。提供免费试用、云服务器、云数据库、云安全、云企业应用等云计算服务，以及大数据、人工智能服务、精准定制基于场景的行业解决方案。免费备案，7x24小时售后支持，助企业无忧上云。",
+            link: "https://www.aliyun.com/",
+        },
+        {
+            icon: "https://res-static.hc-cdn.cn/aem/content/dam/cloudbu-site/archive/commons/web_resoure/cms/static/images/global/favicon.ico",
+            title: "华为开发者",
+            desc: "华为开发者官方网站_创新从这里开始",
+            link: "https://developer.huawei.com/",
+        },
+        {
+            icon: "https://momoyu.cc/icon-192.png",
+            title: "摸摸鱼热榜",
+            desc: '聚合每日热门、搞笑、有趣、适合摸鱼的资讯',
+            link: "https://momoyu.cc",
+        },
+        {
+            icon: "https://www.zdzn.net/assets/img/logo.png",
+            title: "ZDZN",
+            desc: '开发者导航',
+            link: "https://www.zdzn.net/",
+        },
+        
+    ]
+}
+
 export const NAV_DATA: NavData[] = [
     VUE_NAV,
     ANGULAR_NAV,
@@ -702,5 +869,6 @@ export const NAV_DATA: NavData[] = [
     LEARN_NAV,
     FILM_NAV,
     GAME_NAV,
-    HUB_NAV
+    HUB_NAV,
+    OTHER_NAV
 ];

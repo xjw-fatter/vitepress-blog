@@ -16,9 +16,6 @@ hero:
       text: AI 导航
       link: /pages/nav/#AI%20导航
     - theme: alt
-      text: 笔记
-      link: /pages/notes/css/
-    - theme: alt
       text: 关于
       link: /pages/about
 
