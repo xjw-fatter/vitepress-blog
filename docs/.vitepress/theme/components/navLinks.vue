@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import { NavDataItem } from "../../../pages/nav/constants/nav";
 import { withBase } from "vitepress";
+import { NavDataItem } from "../../../share/types/index.type";
 const props = defineProps<{
     title: string;
     items: NavDataItem[];
