@@ -59,6 +59,7 @@ export default defineConfig({
   },
   // 部署的时候需要注意该参数避免样式丢失 Github Pages需要与仓库同名/vitepress-blog/ 域名根目录则 /
   base: "/vitepress-blog/",
+  // base: "/",
   vite: {
     // Vite 配置选项
     server: {

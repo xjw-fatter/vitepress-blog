@@ -472,7 +472,7 @@ const TOOL_NAV: NavData = {
             link: "https://tool.lmeee.com/",
         },
         {
-            icon: "https://tool.lmeee.com/static/images/common/logo.png",
+            icon: "https://blog.idejihuo.com/wp-content/uploads/2021/07/favicon-2.ico",
             title: "IDE激活网",
             desc: "各类开发工具和办公工具的激活码下载和绿色版软件下载。",
             link: "https://blog.idejihuo.com/",
