@@ -79,7 +79,8 @@ export default {
           },
         },
       });
+      listener.copy();
     }
-    listener.copy()
+
   }
 } satisfies Theme
