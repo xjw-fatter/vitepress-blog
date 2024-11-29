@@ -2,8 +2,9 @@ import { ModelOptions } from "oh-my-live2d";
 
 export const LIVE2D_MODELS: ModelOptions[] = [
     {
-        path: 'https://cdn.jsdelivr.net/gh/Eikanya/Live2d-model/Live2D/Senko_Normals/senko.model3.json',
-        position: [-10, 20],
+        "path": 'https://cdn.jsdelivr.net/gh/Eikanya/Live2d-model/Live2D/Senko_Normals/senko.model3.json',
+        "position": [-10, 20],
+        "mobileScale": 0.08,
     },
     {
         "path": "https://model.oml2d.com/Pio/model.json",
@@ -11,7 +12,7 @@ export const LIVE2D_MODELS: ModelOptions[] = [
         "position": [0, 50],
         "stageStyle": {
             "height": 300
-        }
+        },
     },
     {
         "path": "https://model.oml2d.com/shizuku/shizuku.model.json",
@@ -21,7 +22,8 @@ export const LIVE2D_MODELS: ModelOptions[] = [
         "stageStyle": {
             "height": 370,
             "width": 400
-        }
+        },
+        // "mobileScale": 0.08,
     },
     {
         "path": "https://model.oml2d.com/shizuku_pajama/index.json",
@@ -31,7 +33,8 @@ export const LIVE2D_MODELS: ModelOptions[] = [
         "stageStyle": {
             "height": 350,
             "width": 330
-        }
+        },
+        "mobileScale": 0.08,
     },
     {
         "path": "https://model.oml2d.com/HK416-1-normal/model.json",
@@ -39,6 +42,7 @@ export const LIVE2D_MODELS: ModelOptions[] = [
         "scale": 0.08,
         "stageStyle": {
             "height": 450
-        }
+        },
+        "mobileScale": 0.08,
     }
 ]

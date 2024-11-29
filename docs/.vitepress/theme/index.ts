@@ -32,13 +32,41 @@ export default {
         busuanzi.fetch();
       };
     }
-
-    const { loadOml2d } = await import('oh-my-live2d');
-    loadOml2d({
-      models: LIVE2D_MODELS,
-      mobileDisplay: false,
-      primaryColor: "#5e3af2",
-      sayHello: false,
-    });
+    if (!(import.meta as any).env.SSR) {
+      const { loadOml2d } = await import("oh-my-live2d");
+      loadOml2d({
+        mobileDisplay: false,
+        models: LIVE2D_MODELS,
+        primaryColor: "#5e3af2",
+        menus: {
+          disable: false,
+          // items: [
+          //   {
+          //     id: 'rest',
+          //     title: '关闭',
+          //     icon: 'icon-rest',
+          //     onClick(oml2d) {
+          //       oml2d.stageSlideOut();
+          //       oml2d.setStatusBarClickEvent(() => {
+          //         oml2d.stageSlideIn();
+          //       });
+          //     },
+          //   },
+          // ],
+        },
+        tips: {
+          idleTips: {
+            wordTheDay: true,
+          },
+          mobileStyle: {
+            fontSize: "12px",
+            minHeight: "50px",
+          },
+          style: {
+            fontSize: "16px",
+          },
+        },
+      });
+    }
   }
 } satisfies Theme
