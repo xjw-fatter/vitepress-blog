@@ -12,6 +12,9 @@ import NavBarTitleAfter from './components/NavBarTitleAfter.vue'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import { LIVE2D_MODELS } from '../../share/constants';
+import { listener } from '../../share/utils';
+
+
 
 export default {
   extends: DefaultTheme,
@@ -77,5 +80,6 @@ export default {
         },
       });
     }
+    listener.copy()
   }
 } satisfies Theme
