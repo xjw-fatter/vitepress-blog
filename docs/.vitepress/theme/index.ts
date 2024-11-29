@@ -34,25 +34,34 @@ export default {
     }
     if (!(import.meta as any).env.SSR) {
       const { loadOml2d } = await import("oh-my-live2d");
-      loadOml2d({
+      const oml2d = loadOml2d({
         mobileDisplay: false,
         models: LIVE2D_MODELS,
         primaryColor: "#5e3af2",
+        sayHello: false,
         menus: {
           disable: false,
-          // items: [
-          //   {
-          //     id: 'rest',
-          //     title: '关闭',
-          //     icon: 'icon-rest',
-          //     onClick(oml2d) {
-          //       oml2d.stageSlideOut();
-          //       oml2d.setStatusBarClickEvent(() => {
-          //         oml2d.stageSlideIn();
-          //       });
-          //     },
-          //   },
-          // ],
+          items: [
+            {
+              id: 'rest',
+              title: '关闭',
+              icon: 'icon-rest',
+              onClick() {
+                oml2d.stageSlideOut();
+                oml2d.setStatusBarClickEvent(() => {
+                  oml2d.stageSlideIn();
+                });
+              },
+            },
+            {
+              id: 'SwitchModel',
+              icon: 'icon-switch', 
+              title: '切换模型',
+              onClick(): void {
+                oml2d.loadNextModel();
+              }
+            },
+          ],
         },
         tips: {
           idleTips: {

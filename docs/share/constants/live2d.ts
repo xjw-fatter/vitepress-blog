@@ -2,7 +2,7 @@ import { ModelOptions } from "oh-my-live2d";
 
 export const LIVE2D_MODELS: ModelOptions[] = [
     {
-        "path": 'https://cdn.jsdelivr.net/gh/Eikanya/Live2d-model/Live2D/Senko_Normals/senko.model3.json',
+        "path": "https://model.oml2d.com/Senko_Normals/senko.model3.json",
         "position": [-10, 20],
         "mobileScale": 0.08,
     },
