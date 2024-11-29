@@ -5,6 +5,7 @@ specifiers:
   busuanzi.pure.js: ^1.0.3
   canvas-confetti: ^1.9.3
   element-plus: ^2.8.8
+  oh-my-live2d: ^0.19.3
   sass: ^1.81.0
   vitepress: ^1.4.1
   vitepress-sidebar: ^1.25.0
@@ -14,6 +15,7 @@ dependencies:
   busuanzi.pure.js: 1.0.3
   canvas-confetti: 1.9.3
   element-plus: 2.8.8_vue@3.5.12
+  oh-my-live2d: 0.19.3
   vitepress: 1.4.1_rvrb4adlninxgmgcuqdk54choi
   vue: 3.5.12
 
@@ -1598,6 +1600,10 @@ packages:
 
   /normalize-wheel-es/1.2.0:
     resolution: {integrity: sha512-Wj7+EJQ8mSuXr2iWfnujrimU35R2W4FAErEyTmJoJ7ucwTn2hOUSsRehMb5RSYkxXGTM7Y9QpvPmp++w5ftoJw==}
+    dev: false
+
+  /oh-my-live2d/0.19.3:
+    resolution: {integrity: sha512-EWva8OUmcExIFIhqGkeiVPQt44RvYYFg+nmpkrZgQVQ+xofVFq4SDYAg5NcdK40HxyV4vORBJEg4OHIHP96MrA==}
     dev: false
 
   /oniguruma-to-js/0.4.3:

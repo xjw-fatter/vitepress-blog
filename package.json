@@ -18,6 +18,7 @@
     "busuanzi.pure.js": "^1.0.3",
     "canvas-confetti": "^1.9.3",
     "element-plus": "^2.8.8",
+    "oh-my-live2d": "^0.19.3",
     "vitepress": "^1.4.1",
     "vue": "^3.5.12"
   },
