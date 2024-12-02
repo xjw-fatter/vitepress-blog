@@ -41,8 +41,8 @@ export default defineConfig({
     },
     // 页脚
     footer: {
-      message: 'Copyright © 2024-present <a href="https://github.com/xjw-fatter">XiYiAngXiang</a>.',
-      copyright: 'ICP许可证号 <a href="https://beian.miit.gov.cn/" target="_blank">鄂ICP备2021012299号-1</a>'
+      message: 'Copyright © 2024-present <a href="https://www.agezi.top">XiYiAngXiang</a>.',
+      copyright: 'ICP许可证号 <a id="icp" href="https://beian.miit.gov.cn/" target="_blank">鄂ICP备2021012299号-1</a>'
     },
     // 文档的最后更新时间
     lastUpdated: {

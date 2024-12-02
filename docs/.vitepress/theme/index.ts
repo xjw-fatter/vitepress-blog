@@ -12,9 +12,7 @@ import NavBarTitleAfter from './components/NavBarTitleAfter.vue'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import { LIVE2D_MODELS } from '../../share/constants';
-import { listener } from '../../share/utils';
-
-
+import { listener, utils } from '../../share/utils';
 
 export default {
   extends: DefaultTheme,
@@ -58,7 +56,7 @@ export default {
             },
             {
               id: 'SwitchModel',
-              icon: 'icon-switch', 
+              icon: 'icon-switch',
               title: '切换模型',
               onClick(): void {
                 oml2d.loadNextModel();
@@ -80,7 +78,9 @@ export default {
         },
       });
       listener.copy();
+      if (window.location.href.indexOf('xjw.life') === -1) {
+        utils.aTextbyId("icp", `"鄂ICP备2021012299号-${window.location.href.indexOf('xjw.life') < -1 ? '2' : '1'}"`)
+      }
     }
-
   }
 } satisfies Theme

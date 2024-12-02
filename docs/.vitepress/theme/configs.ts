@@ -80,7 +80,7 @@ export const nav: DefaultTheme.Config["nav"] = [
     { text: "笔记", link: "/pages/notes/css/" },
     { text: "导航", link: "/pages/nav/index" },
     {
-        text: "笔记",
+        text: "外链",
         items: [
             { text: "百度", link: "https://kaifa.baidu.com/" },
             { text: "掘金", link: "https://juejin.cn/frontend" },
