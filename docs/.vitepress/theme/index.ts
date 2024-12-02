@@ -78,9 +78,7 @@ export default {
         },
       });
       listener.copy();
-      if (window.location.href.indexOf('xjw.life') === -1) {
-        utils.aTextbyId("icp", `"鄂ICP备2021012299号-${window.location.href.indexOf('xjw.life') < -1 ? '2' : '1'}"`)
-      }
+      utils.aTextbyId("icp", `鄂ICP备2021012299号-${window.location.href.indexOf('xjw.life') < -1 ? '2' : '1'}`)
     }
   }
 } satisfies Theme
