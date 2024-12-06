@@ -24,7 +24,7 @@ const AI_NAV: NavData = {
             link: "https://www.beautiful.ai",
         },
         {
-            icon: "https://ai.ashuiai.com/favicon.ico",
+            icon: "/icons/ha.png",
             title: "阿水AI",
             link: "https://ai.ashuiai.com/home",
         },
@@ -345,7 +345,7 @@ const CSS_NAV: NavData = {
             link: "https://www.tailwindcss.cn",
         },
         {
-            icon: "http://www.unocss.cn/favicon.svg",
+            icon: "/icons/unocss.svg",
             title: "UnoCSS",
             desc: "即时按需原子化 CSS 引擎",
             link: "http://www.unocss.cn/",
@@ -534,7 +534,7 @@ const NODE_NAV: NavData = {
     title: "Node",
     items: [
         {
-            icon: "/icons/nodejs.svg",
+            icon: "https://nodejs.org/static/images/favicons/favicon.png",
             title: "Node.js",
             desc: "Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境",
             link: "https://nodejs.org/zh-cn",
@@ -546,7 +546,7 @@ const NODE_NAV: NavData = {
             link: "https://expressjs.com",
         },
         {
-            icon: "/icons/koa.svg",
+            icon: "/icons/xi.png",
             title: "Koa",
             desc: "基于 Node.js 平台的下一代 web 开发框架",
             link: "https://koajs.com",
@@ -576,13 +576,13 @@ const CHART_NAV: NavData = {
             link: "https://echarts.apache.org/zh/index.html",
         },
         {
-            icon: "https://antv.vision/icons/icon-72x72.png",
+            icon: "/icons/antv.png",
             title: "AntV",
             desc: "蚂蚁集团全新一代数据可视化解决方案，致力于提供一套简单方便、专业可靠、无限可能的数据可视化最佳实践。",
             link: "https://antv.vision/zh/",
         },
         {
-            icon: "https://d3js.org/favicon.png",
+            icon: "/icons/d3js.svg",
             title: "D3.js",
             desc: "一个遵循 Web 标准用于可视化数据的 JavaScript 库",
             link: "https://d3js.org",
@@ -761,7 +761,7 @@ const HUB_NAV: NavData = {
         },
         {
             title: "V2EX",
-            icon: "https://www.v2ex.com/static/icon-192.png",
+            icon: "/icons/xi.png",
             desc: "一个关于分享和探索的地方",
             link: "https://www.v2ex.com",
         },
