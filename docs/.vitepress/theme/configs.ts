@@ -61,12 +61,6 @@ const sideBarData: VitePressSidebarOptions[] = [
     {
         ...defaultOptions,
         documentRootPath: "/docs",
-        scanStartPath: "pages/games",
-        resolvePath: "/pages/games/",
-    },
-    {
-        ...defaultOptions,
-        documentRootPath: "/docs",
         scanStartPath: "pages/notes",
         resolvePath: "/pages/notes/",
     },
