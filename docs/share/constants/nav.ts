@@ -838,12 +838,6 @@ const OTHER_NAV: NavData = {
             link: "https://developer.huawei.com/",
         },
         {
-            icon: "https://momoyu.cc/icon-192.png",
-            title: "摸摸鱼热榜",
-            desc: '聚合每日热门、搞笑、有趣、适合摸鱼的资讯',
-            link: "https://momoyu.cc",
-        },
-        {
             icon: "https://www.zdzn.net/assets/img/logo.png",
             title: "ZDZN",
             desc: '开发者导航',
