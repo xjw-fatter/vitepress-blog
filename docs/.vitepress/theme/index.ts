@@ -1,14 +1,15 @@
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
 import type { Theme } from "vitepress";
-import { inBrowser, useRoute } from "vitepress";
+import { inBrowser } from "vitepress";
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 import busuanzi from "busuanzi.pure.js";
 import visitorPanel from "./components/visitorPanel.vue";
 import confetti from "./components/confetti.vue";
 import navLinks from "./components/navLinks.vue";
-import NavBarTitleAfter from './components/NavBarTitleAfter.vue'
+import navBarTitleAfter from './components/navBarTitleAfter.vue'
+import myLayout from "./components/myLayout.vue";
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import { LIVE2D_MODELS } from '../../share/constants';
@@ -17,9 +18,9 @@ import { listener, utils } from '../../share/utils';
 export default {
   extends: DefaultTheme,
   Layout: () => {
-    return h(DefaultTheme.Layout, null, {
+    return h(myLayout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
-      'nav-bar-title-after': () => h(NavBarTitleAfter),
+      'nav-bar-title-after': () => h(navBarTitleAfter),
     })
   },
   async enhanceApp({ app, router, siteData }) {

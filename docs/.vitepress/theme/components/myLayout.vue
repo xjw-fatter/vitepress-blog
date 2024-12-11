@@ -1,0 +1,51 @@
+<!--Layout.vue-->
+<template>
+    <Layout>
+        <template #doc-after>
+            <div style="margin-top: 24px">
+                <Giscus id="comments" :theme="isDark ? 'dark' : 'light'" v-bind="{...giscusOptions}" />
+            </div>
+        </template>
+    </Layout>
+</template>
+
+<script lang="ts" setup>
+import Giscus from "@giscus/vue";
+import DefaultTheme from "vitepress/theme";
+import { watch } from "vue";
+import { inBrowser, useData } from "vitepress";
+
+const { isDark, page } = useData();
+
+const { Layout } = DefaultTheme;
+
+const giscusOptions = {
+    repo: "xjw-fatter/vitepress-blog",
+    repoId: "R_kgDONFEywA",
+    category: "Announcements",
+    categoryId: "DIC_kwDONFEywM4ClHhN",
+    term: "!!!" ,
+    mapping: "specific",
+    strict: 1,
+    reactionsEnabled: 1,
+    emitMetadata: 0,
+    inputPosition: "top",
+    lang: "zh-CN",
+    loading: "lazy",
+    crossorigin: "anonymous"
+}
+
+watch(isDark, (dark) => {
+    if (!inBrowser) return;
+    console.log('myLayout.vue log', dark);
+
+    const iframe = document
+        .querySelector("giscus-widget")
+        ?.shadowRoot?.querySelector("iframe");
+
+    iframe?.contentWindow?.postMessage(
+        { giscus: { setConfig: { theme: dark ? "dark" : "light" } } },
+        "https://giscus.app"
+    );
+});
+</script>

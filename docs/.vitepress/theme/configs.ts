@@ -71,7 +71,7 @@ export const sidebar: DefaultTheme.Config["sidebar"] =
 // nav
 export const nav: DefaultTheme.Config["nav"] = [
     { text: "首页", link: "/" },
-    { text: "笔记", link: "/pages/notes/js/", activeMatch: '^/pages/notes' },
+    { text: "笔记", link: "/pages/notes/js/library", activeMatch: '^/pages/notes' },
     { text: "导航", link: "/pages/nav/index", activeMatch: '^/pages/nav' },
     {
         text: "外链",

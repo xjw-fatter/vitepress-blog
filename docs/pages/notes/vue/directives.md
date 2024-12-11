@@ -2,7 +2,7 @@
 title: 自定义指令
 ---
 
-# 介绍
+# 自定义指令
 
 除了 Vue 内置的一系列指令 (比如 v-model 或 v-show) 之外，Vue 还允许你注册自定义的指令 ([Custom Directives](https://cn.vuejs.org/guide/reusability/custom-directives.html))。
 

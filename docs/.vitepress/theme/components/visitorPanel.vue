@@ -11,8 +11,8 @@
           src="/xiang.png"
           alt="heart"
           class="heart-img"
-          width="50"
-          height="50"
+          width="40"
+          height="40"
           @click="onLinkUmiHandle"
         />
         <span class="text">
@@ -29,7 +29,7 @@ import { inBrowser } from "vitepress";
 const onLinkUmiHandle = () => {
   if (inBrowser) {
     window.open(
-      "https://cloud.umami.is/share/5Hy3m0qNiQcDzf2g/xjw-fatter.github.io",
+      "https://cloud.umami.is/share/3Qvg6OsV7RHgr8Ga/xjw.life",
       "_blank"
     );
   }
