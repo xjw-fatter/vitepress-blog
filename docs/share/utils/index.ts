@@ -64,4 +64,13 @@ export const utils = {
             element && (element.textContent = content);
         });
     },
+    getProcessArgv: () => {
+        const args = process.argv.slice(2); // 去掉前两个元素，只保留命令和参数
+        const command = args[0]; // 第一个参数是命令
+        const params = args.slice(1); // 剩余的是参数
+        return {
+            command,
+            params
+        }
+    }
 };

@@ -1,5 +1,6 @@
 import { DefaultTheme } from "vitepress";
 import { generateSidebar, VitePressSidebarOptions } from "vitepress-sidebar";
+import { utils } from "../../share/utils";
 // https://vitepress-sidebar.cdget.com/zhHans/
 // sidebar配置
 const defaultOptions: VitePressSidebarOptions = {
@@ -51,6 +52,7 @@ const defaultOptions: VitePressSidebarOptions = {
     // frontmatterTitleFieldName: string, // 前事项中标题字段的名称。
 };
 
+// 要扫描的目录
 const sideBarData: VitePressSidebarOptions[] = [
     {
         ...defaultOptions,
@@ -65,10 +67,12 @@ const sideBarData: VitePressSidebarOptions[] = [
         resolvePath: "/pages/notes/",
     },
 ];
+
+// 生成sidebar
 export const sidebar: DefaultTheme.Config["sidebar"] =
     generateSidebar(sideBarData);
 
-// nav
+// 导航栏
 export const nav: DefaultTheme.Config["nav"] = [
     { text: "首页", link: "/" },
     { text: "笔记", link: "/pages/notes/js/library", activeMatch: '^/pages/notes' },
@@ -82,6 +86,7 @@ export const nav: DefaultTheme.Config["nav"] = [
     },
 ];
 
+// algolia配置
 export const algolia: DefaultTheme.AlgoliaSearchOptions = {
     appId: 'FJYL7LQS95',
     apiKey: 'e196a8af5b5470b0ae3c755c401293b1',
@@ -125,4 +130,29 @@ export const algolia: DefaultTheme.AlgoliaSearchOptions = {
             }
         }
     }
+}
+
+// 搜索配置
+export const searchOptions = (): { provider: 'local'; options?: DefaultTheme.LocalSearchOptions }
+    | { provider: 'algolia'; options: DefaultTheme.AlgoliaSearchOptions } => {
+    const { command, params } = utils.getProcessArgv()
+
+    console.log(command, params)
+    // 本地环境和非指定命令打包时使用本地搜索
+    if (command === "build" && params[1] && params[1] === "life") return {
+        provider: "algolia",
+        options: algolia
+    }
+
+    return {
+        provider: "local"
+    }
+
+}
+
+export const basePath = (): string => {
+    const { params } = utils.getProcessArgv();
+    // 部署的时候需要注意该参数避免样式丢失 Github Pages需要与仓库同名/vitepress-blog/ 域名根目录则 /
+    if(!params[1]) return "/vitepress-blog/";
+    return "/"
 }

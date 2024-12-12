@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress";
-import { algolia, nav, sidebar } from "./theme/configs";
+import { basePath, nav, searchOptions, sidebar } from "./theme/configs";
+
 
 export default defineConfig({
   title: "嘻咦昂向",
@@ -35,11 +36,7 @@ export default defineConfig({
     // 返回顶部label
     returnToTopLabel: "返回顶部",
     // 搜索
-    search: {
-      // provider: "local",
-      provider: "algolia",
-      options: algolia
-    },
+    search: searchOptions(),
     // 页脚
     footer: {
       message: 'Copyright © 2024-present <a href="https://www.agezi.top">XiYiAngXiang</a>.',
@@ -59,8 +56,7 @@ export default defineConfig({
     socialLinks: [{ icon: "github", link: "https://github.com/xjw-fatter" }],
   },
   // 部署的时候需要注意该参数避免样式丢失 Github Pages需要与仓库同名/vitepress-blog/ 域名根目录则 /
-  base: "/vitepress-blog/",
-  // base: "/",
+  base: basePath(),
   vite: {
     // Vite 配置选项
     server: {
