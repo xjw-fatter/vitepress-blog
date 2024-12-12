@@ -7,66 +7,79 @@ const AI_NAV: NavData = {
             icon: "https://openai.com/favicon.ico",
             title: "ChatGPT | OpenAI",
             link: "https://openai.com/",
+            desc: "ChatGPT is a sibling model to InstructGPT⁠, which is trained to follow an instruction in a prompt and provide a detailed response."
         },
         {
             icon: "https://www.notion.so/images/logo-ios.png",
             title: "Notion AI（笔记）",
             link: "https://www.notion.so",
+            desc: "A new tool that blends your everyday work apps into one. It's the all-in-one workspace for you and your team."
         },
         {
             icon: "https://www.midjourney.com/apple-touch-icon.png",
             title: "Midjourney（绘画）",
             link: "https://www.midjourney.com",
+            desc: "An independent research lab exploring new mediums of thought and expanding the imaginative powers of the human species."
         },
         {
             icon: "https://global-uploads.webflow.com/59deb588800ae30001ec19c9/5d4891e0e260e3c1bc37b100_beautiful%20ai%20favicon%20%20blue%20square.png",
             title: "Beautiful.ai（PPT）",
             link: "https://www.beautiful.ai",
+            desc: "Beautiful.ai is the best AI-powered presentation software for teams. Stay on brand, level up and automate presentation design, and collaborate from anywhere."
         },
         {
             icon: "/icons/ha.png",
-            title: "阿水AI",
-            link: "https://ai.ashuiai.com/home",
+            title: "欧亿Ai",
+            link: "https://ai.rcouyi.com/home",
+            desc: ""
         },
         {
             icon: "https://v0.dev/assets/icon-dark-32x32.png",
             title: "v0",
             link: "https://v0.dev/chat",
+            desc: "Chat with v0. Generate UI with simple text prompts. Copy, paste, ship."
         },
         {
             icon: "https://feizhuke.com/zhufav.png",
             title: "非猪",
             link: "https://feizhuke.com/",
+            desc: "ai导航,让你秒变飞猪ai工具集合网站指南,汇聚国内外知名aigc软件服务"
         },
         {
             icon: "https://statics.moonshot.cn/kimi-chat/favicon.ico",
             title: "kimi",
             link: "https://kimi.moonshot.cn/",
+            desc: "Kimi.ai - 会推理解析，能深度思考的AI助手"
         },
         {
             icon: "https://nlp-eb.cdn.bcebos.com/logo/favicon.ico",
             title: "文心一言",
             link: "https://yiyan.baidu.com/",
+            desc: "文心一言既是你的智能伙伴，可以陪你聊天、回答问题、画图识图；也是你的AI助手，可以提供灵感、撰写文案、阅读文档、智能翻译，帮你高效完成工作和学习任务。"
         },
         {
             icon: "https://cdn-bot.hunyuan.tencent.com/logo.png",
             title: "腾讯元宝",
             link: "https://yuanbao.tencent.com",
+            desc: "增强大模型,AI工具,AI助手,AI搜索,AI解析,AI写作,AI画图,AI写真,AI头像,腾讯混元大模型"
         },
         {
             icon: "https://www.baidu.com/favicon.ico",
             title: "百度AI助手",
             link: "https://chat.baidu.com",
+            desc: "百度AI助手"
         },
         {
             icon: "https://taichu-web.ia.ac.cn/favicon.ico",
             title: "紫东太初",
             link: "https://taichu-web.ia.ac.cn",
+            desc: "中国科学院自动化研究所和武汉人工智能研究院推出新一代多模态大模型，支持多轮问答、文本创作、图像生成、3D理解、信号分析等全面问答任务，拥有更强的认知、理解、创作能力，带来全新互动体验。"
         },
         {
             icon: "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/web/logo-icon.png",
             title: "豆包",
             link: "https://www.doubao.com/chat/",
+            desc: "豆包 - 字节跳动旗下 AI 智能助手"
         },
     ],
 };

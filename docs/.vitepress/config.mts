@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress";
-import { nav, sidebar } from "./theme/configs";
+import { algolia, nav, sidebar } from "./theme/configs";
 
 export default defineConfig({
   title: "嘻咦昂向",
@@ -36,8 +36,9 @@ export default defineConfig({
     returnToTopLabel: "返回顶部",
     // 搜索
     search: {
-      provider: "local",
-      // provider: "algolia",
+      // provider: "local",
+      provider: "algolia",
+      options: algolia
     },
     // 页脚
     footer: {

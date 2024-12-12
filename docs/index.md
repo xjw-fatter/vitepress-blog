@@ -30,12 +30,12 @@ features:
     icon:
       src: /icons/ha.png
     details: 记录一些日常
-    link: /pages/notes/css/
+    link: /pages/notes/js/library
     linkText: 笔记
   - title: 工具
     icon:
       src: /icons/ha.png
-    details: 助力开发人员和 IT 工作者
+    details: 助力开发人员
     link: /pages/nav/#工具
     linkText: 工具
 ---
