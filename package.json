@@ -9,9 +9,9 @@
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
     "preview": "vitepress preview docs",
-    "build:life": "vitepress build docs life",
+    "build:life": "vitepress build docs life && node toBlog.cjs life",
     "preview:life": "vitepress preview docs life",
-    "build:top": "vitepress build docs top",
+    "build:top": "vitepress build docs top && node toBlog.cjs top",
     "preview:top": "vitepress preview docs top"
   },
   "keywords": [],
