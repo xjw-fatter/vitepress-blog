@@ -19,8 +19,9 @@ function copyDir(src, dest) {
     entries.forEach(entry => {
         const srcPath = path.join(src, entry.name);
         const destPath = path.join(dest, entry.name);
-        if (entry.isFile()) {
+        if (entry.isFile() && srcPath.indexOf(".user.ini") === -1) {
             // 如果是文件，直接复制
+            console.log(`复制文件: ${srcPath} -> ${destPath}`);
             fs.copyFileSync(srcPath, destPath);
         } else if (entry.isDirectory()) {
             // 如果是目录，递归复制
