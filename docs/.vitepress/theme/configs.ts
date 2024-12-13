@@ -65,6 +65,7 @@ const sideBarData: VitePressSidebarOptions[] = [
         documentRootPath: "/docs",
         scanStartPath: "pages/notes",
         resolvePath: "/pages/notes/",
+        manualSortFileNameByPriority: ['js','vue','others']
     },
 ];
 
