@@ -310,3 +310,148 @@ export const randomInt = (min: number, max: number): number => {
 }
 ```
 
+## class Store
+
+&emsp;&emsp;定义了一个名为 Store 的类,提供一个简单的状态管理机制，类似于 Vuex，但没有 Vuex 那么复杂和功能丰富。
+它允许你定义 state、getters、mutations 和 actions，并通过 commit 和 dispatch 方法来修改和获取状态。
+
+
+```js
+// 以下是一个简单的 JavaScript 类，类似于 Vuex，用于管理数据状态
+export default class Store {
+	constructor(options) {
+		// 初始化 state：如果 options 中提供了 state，则将其赋值给 this.state，否则初始化为空对象。
+		this.state = options.state || {};
+
+		// 初始化 getters：遍历 options 中的 getters 对象，为每个 getter 定义一个属性，并通过 Object.defineProperty 定义一个 getter 函数，该函数调用 getters[key](this.state) 来获取计算属性的值。
+		this.getters = {};
+		const { getters } = options;
+		if (getters) {
+			Object.keys(getters).forEach((key) => {
+				Object.defineProperty(this.getters, key, {
+					get: () => getters[key](this.state),
+					enumerable: true,
+				});
+			});
+		}
+
+		// 初始化 mutations：遍历 options 中的 mutations 对象，为每个 mutation 定义一个方法，该方法调用 mutations[key](this.state, payload) 来修改 state。
+		this.mutations = {};
+		const { mutations } = options;
+		if (mutations) {
+			Object.keys(mutations).forEach((key) => {
+				this.mutations[key] = (payload) => {
+					mutations[key](this.state, payload);
+				};
+			});
+		}
+
+		// 初始化 actions：遍历 options 中的 actions 对象，为每个 action 定义一个方法，该方法调用 actions[key](this, payload) 来执行异步操作或复杂逻辑。
+		this.actions = {};
+		const { actions } = options;
+		if (actions) {
+			Object.keys(actions).forEach((key) => {
+				this.actions[key] = (payload) => {
+					actions[key](this, payload);
+				};
+			});
+		}
+	}
+
+  // commit 方法:用于触发一个 mutation。如果 mutationName 对应的 mutation 存在且是一个函数，则调用该函数并传入 payload。否则，打印错误信息。
+	commit(mutationName, payload) {
+		if (typeof this.mutations[mutationName] === "function") {
+			this.mutations[mutationName](payload);
+		} else {
+			console.error(`Mutation "${mutationName}" does not exist.`);
+		}
+	}
+
+  // dispatch 方法: 用于触发一个 action。如果 actionName 对应的 action 存在且是一个函数，则调用该函数并传入 payload。否则，打印错误信息。
+	dispatch(actionName, payload) {
+		if (typeof this.actions[actionName] === "function") {
+			this.actions[actionName](payload);
+		} else {
+			console.error(`Action "${actionName}" does not exist.`);
+		}
+	}
+}
+```
+
+例:
+```js
+  import Store from "./store";
+  import { getUUID } from "./utils/utils";
+  import { commonService } from "./service/common.service";
+
+// 定义 state
+const state = {
+	info: {
+		name: "", // 姓名
+    sex: "", // 性别
+    age: "", // 年龄
+	},
+	detail: {}, // 详情
+};
+
+// 定义 getters
+const getters = {
+	info() {
+		return state.info;
+	},
+	detail() {
+		return state.detail;
+	},
+};
+
+// 定义 mutations
+const mutations = {
+	updateInfo(state, payload) {
+		state.info = payload;
+	},
+	updateDetail(state, payload) {
+		state.detail = payload;
+	},
+};
+
+// 定义 actions
+const actions = {
+	initInfo(store, payload) {
+    try{
+      const res = await commonService.$initInfo({ ...payload.params, traceNo: getUUID()}
+      if (!res.data.success) {
+        payload.callback && payload.callback(res);
+        console.log("初始化失败", res.data.message);
+        return;
+      }
+      store.commit("updateInfo", res.data);
+      payload.callback && payload.callback(res);
+    } catch(e) {
+      console.log("初始化失败", e);
+      payload.callback && payload.callback({success:false,message:"初始化失败"});
+    }
+	},
+};
+
+// 创建一个新的 Store 实例
+export default new Store({
+	state,
+	getters,
+	mutations,
+	actions,
+});
+```
+```js
+const info = store.getters.info;
+store.commit("updateInfo", {
+    name: "zs",
+    sex: "男",
+    age: "18",
+});
+store.dispatch("initInfo", {
+  params: {},
+  callback: (res) => {
+    // ... 
+  },
+});
+```

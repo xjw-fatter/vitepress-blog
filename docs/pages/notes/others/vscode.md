@@ -3,8 +3,9 @@ title: VSCode扩展
 ---
 
 + [腾讯云 AI 代码助手](https://marketplace.visualstudio.com/items?itemName=Tencent-Cloud.coding-copilot) - 腾讯云自研的一款开发编程提效辅助工具，基于混元代码大模型，提供技术对话、代码补全、代码诊断和优化等能力。
-+ [CodeGeeX](https://marketplace.visualstudio.com/items?itemName=AMiner.codegeex) - 智谱AI旗下的一款基于大模型的智能编程助手
 + [TONGYI Lingma](https://marketplace.visualstudio.com/items?itemName=Alibaba-Cloud.tongyi-lingma) - 通义灵码-灵动指间，快码加编，你的智能编码助手
++ [MarsCode AI: Coding Assistant](https://marketplace.visualstudio.com/items?itemName=MarsCode.marscode-extension) - 豆包旗下的智能编程助手
++ [CodeGeeX](https://marketplace.visualstudio.com/items?itemName=AMiner.codegeex) - 智谱AI旗下的一款基于大模型的智能编程助手
 + [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) - 自动添加 HTML/XML 结束标签
 + [Auto Complete Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-complete-tag) - 为 HTML/XML 添加关闭标签和自动重命名成对的标签
 + [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag) - 自动重命名成对的 HTML/XML 标签
