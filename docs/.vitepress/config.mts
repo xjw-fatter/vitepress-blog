@@ -17,6 +17,10 @@ export default defineConfig({
       },
     ],
   ],
+  markdown: {
+    // 代码块行号
+    lineNumbers: true,
+  },
   themeConfig: {
     // 网站的logo
     logo: "/favicon.ico",
