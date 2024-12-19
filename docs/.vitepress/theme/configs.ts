@@ -65,7 +65,7 @@ const sideBarData: VitePressSidebarOptions[] = [
         documentRootPath: "/docs",
         scanStartPath: "pages/notes",
         resolvePath: "/pages/notes/",
-        manualSortFileNameByPriority: ['js','vue','others']
+        manualSortFileNameByPriority: ["js", "vue", "others"],
     },
 ];
 
@@ -76,8 +76,12 @@ export const sidebar: DefaultTheme.Config["sidebar"] =
 // 导航栏
 export const nav: DefaultTheme.Config["nav"] = [
     { text: "首页", link: "/" },
-    { text: "笔记", link: "/pages/notes/js/library", activeMatch: '^/pages/notes' },
-    { text: "导航", link: "/pages/nav/index", activeMatch: '^/pages/nav' },
+    {
+        text: "笔记",
+        link: "/pages/notes/js/library",
+        activeMatch: "^/pages/notes",
+    },
+    { text: "导航", link: "/pages/nav/index", activeMatch: "^/pages/nav" },
     {
         text: "外链",
         items: [
@@ -89,71 +93,93 @@ export const nav: DefaultTheme.Config["nav"] = [
 
 // algolia配置
 export const algolia: DefaultTheme.AlgoliaSearchOptions = {
-    appId: 'FJYL7LQS95',
-    apiKey: 'e196a8af5b5470b0ae3c755c401293b1',
-    indexName: 'xjw',
-    placeholder: '搜索',
+    appId: "FJYL7LQS95",
+    apiKey: "e196a8af5b5470b0ae3c755c401293b1",
+    indexName: "xjw",
+    placeholder: "搜索",
     translations: {
         button: {
-            buttonText: '搜索',
-            buttonAriaLabel: '搜索'
+            buttonText: "搜索",
+            buttonAriaLabel: "搜索",
         },
         modal: {
             searchBox: {
-                resetButtonTitle: '清除查询条件',
-                resetButtonAriaLabel: '清除查询条件',
-                cancelButtonText: '取消',
-                cancelButtonAriaLabel: '取消'
+                resetButtonTitle: "清除查询条件",
+                resetButtonAriaLabel: "清除查询条件",
+                cancelButtonText: "取消",
+                cancelButtonAriaLabel: "取消",
             },
             startScreen: {
-                recentSearchesTitle: '搜索历史',
-                noRecentSearchesText: '没有搜索历史',
-                saveRecentSearchButtonTitle: '保存至搜索历史',
-                removeRecentSearchButtonTitle: '从搜索历史中移除',
-                favoriteSearchesTitle: '收藏',
-                removeFavoriteSearchButtonTitle: '从收藏中移除'
+                recentSearchesTitle: "搜索历史",
+                noRecentSearchesText: "没有搜索历史",
+                saveRecentSearchButtonTitle: "保存至搜索历史",
+                removeRecentSearchButtonTitle: "从搜索历史中移除",
+                favoriteSearchesTitle: "收藏",
+                removeFavoriteSearchButtonTitle: "从收藏中移除",
             },
             errorScreen: {
-                titleText: '无法获取结果',
-                helpText: '你可能需要检查你的网络连接'
+                titleText: "无法获取结果",
+                helpText: "你可能需要检查你的网络连接",
             },
             footer: {
-                selectText: '选择',
-                navigateText: '切换',
-                closeText: '关闭',
-                searchByText: '搜索提供者'
+                selectText: "选择",
+                navigateText: "切换",
+                closeText: "关闭",
+                searchByText: "搜索提供者",
             },
             noResultsScreen: {
-                noResultsText: '无法找到相关结果',
-                suggestedQueryText: '你可以尝试查询',
-                reportMissingResultsText: '你认为该查询应该有结果？',
-                reportMissingResultsLinkText: '点击反馈'
-            }
-        }
-    }
-}
+                noResultsText: "无法找到相关结果",
+                suggestedQueryText: "你可以尝试查询",
+                reportMissingResultsText: "你认为该查询应该有结果？",
+                reportMissingResultsLinkText: "点击反馈",
+            },
+        },
+    },
+};
 
 // 搜索配置
-export const searchOptions = (): { provider: 'local'; options?: DefaultTheme.LocalSearchOptions }
-    | { provider: 'algolia'; options: DefaultTheme.AlgoliaSearchOptions } => {
-    const { command, params } = utils.getProcessArgv()
+export const searchOptions = ():
+    | { provider: "local"; options?: DefaultTheme.LocalSearchOptions }
+    | { provider: "algolia"; options: DefaultTheme.AlgoliaSearchOptions } => {
+    const { command, params } = utils.getProcessArgv();
 
-    console.log(command, params)
+    console.log(command, params);
     // 本地环境和非指定命令打包时使用本地搜索
-    if (command === "build" && params[1] && params[1] === "life") return {
-        provider: "algolia",
-        options: algolia
-    }
+    if (command === "build" && params[1] && params[1] === "life")
+        return {
+            provider: "algolia",
+            options: algolia,
+        };
 
     return {
-        provider: "local"
-    }
-
-}
+        provider: "local",
+    };
+};
 
 export const basePath = (): string => {
     const { params } = utils.getProcessArgv();
     // 部署的时候需要注意该参数避免样式丢失 Github Pages需要与仓库同名/vitepress-blog/ 域名根目录则 /
-    if(!params[1]) return "/vitepress-blog/";
-    return "/"
-}
+    if (!params[1]) return "/vitepress-blog/"; // 命令中没有参数则设置为根目录 有life top 等参数则设置为根目录
+    return "/";
+};
+
+/**
+ * 设置页面底部版权信息
+ * 
+ * 该函数根据当前进程的参数生成包含版权信息和ICP许可证号的页面底部信息
+ * 主要用于在网站底部展示版权声明和ICP备案信息
+ * 
+ * @returns {Object} 返回一个包含版权信息和ICP许可证号的对象
+ */
+export const setFooter = () => {
+    // 获取进程参数，用于后续决定ICP备案号的后缀
+    const { params } = utils.getProcessArgv();
+    // 返回包含版权信息和ICP许可证号的对象
+    // 版权信息固定，ICP许可证号根据params[1]的值决定
+    return {
+        message:
+            'Copyright © 2024-present <a href="https://www.agezi.top">XiYiAngXiang</a>.',
+        copyright:
+            `ICP许可证号 <a id="icp" href="https://beian.miit.gov.cn/" target="_blank">鄂ICP备2021012299号-${params[1] === 'life' ? 2 : 1}</a>`,
+    };
+};

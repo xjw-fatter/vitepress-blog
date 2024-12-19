@@ -745,7 +745,12 @@ const LEARN_NAV: NavData = {
             desc: "阮一峰的网络日志",
             link: "http://es6.ruanyifeng.com",
         },
-
+        {
+            icon: "https://www.markdown.cn/img/hero.png",
+            title: "MARKDOWN 中文",
+            desc: "Markdown中文指南",
+            link: "https://www.markdown.cn/",
+        },
     ],
 }
 

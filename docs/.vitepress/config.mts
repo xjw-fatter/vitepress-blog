@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress";
-import { basePath, nav, searchOptions, sidebar } from "./theme/configs";
+import { basePath, nav, searchOptions, setFooter, sidebar } from "./theme/configs";
 
 
 export default defineConfig({
@@ -15,7 +15,7 @@ export default defineConfig({
         src: "https://cloud.umami.is/script.js",
         "data-website-id": "a6fee6db-cc51-4b66-a529-da38c7febe12",
       },
-    ],
+    ], // 站点访问统计umami
   ],
   markdown: {
     // 代码块行号
@@ -42,10 +42,7 @@ export default defineConfig({
     // 搜索
     search: searchOptions(),
     // 页脚
-    footer: {
-      message: 'Copyright © 2024-present <a href="https://www.agezi.top">XiYiAngXiang</a>.',
-      copyright: 'ICP许可证号 <a id="icp" href="https://beian.miit.gov.cn/" target="_blank">鄂ICP备2021012299号-1</a>'
-    },
+    footer: setFooter(),
     // 文档的最后更新时间
     lastUpdated: {
       text: "更新时间",

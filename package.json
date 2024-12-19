@@ -29,6 +29,7 @@
   "devDependencies": {
     "@giscus/vue": "^3.0.0",
     "@types/node": "^22.9.0",
+    "chalk": "4.1.0",
     "sass": "^1.81.0",
     "vitepress-sidebar": "^1.25.0"
   }

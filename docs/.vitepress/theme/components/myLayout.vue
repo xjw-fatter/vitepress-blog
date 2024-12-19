@@ -3,6 +3,7 @@
     <Layout>
         <template #doc-after>
             <div style="margin-top: 24px">
+                <!-- 评论插件 -->
                 <Giscus id="comments" :theme="isDark ? 'dark' : 'light'" v-bind="{...giscusOptions}" />
             </div>
         </template>

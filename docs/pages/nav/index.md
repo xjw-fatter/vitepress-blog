@@ -12,7 +12,6 @@ import { NAV_DATA } from "../../share/constants/index"
   /* 覆盖全局的 vp-layout-max-width（仅当前页面使用） */
   --vp-layout-max-width: 1660px;
 
-  /* layout 样式 */
   .container {
     max-width: var(--vp-layout-max-width) !important;
   }
@@ -21,13 +20,11 @@ import { NAV_DATA } from "../../share/constants/index"
     max-width: 100% !important;
   }
 
-  /* aside 样式 */
   .aside {
     padding-left: 0;
     max-width: 224px;
   }
 
-  /* custom-block */
   .custom-block {
     background: var(--my-custom-block-tip-bg);
     .custom-block-title {
