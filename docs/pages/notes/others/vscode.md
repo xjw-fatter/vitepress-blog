@@ -63,3 +63,5 @@ title: vscode扩展
 - [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) - 发送HTTP请求并查看响应，适合API开发和测试
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) - Markdown编辑增强插件，包括预览、表格生成等功能
 - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) - 启动一个本地开发服务器，支持自动刷新页面
+- [Image preview](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview) - 在代码编辑器的边距（gutter）和悬停时显示图像预览
+- [Power Mode](https://marketplace.visualstudio.com/items?itemName=hoovercj.vscode-power-mode) - 启用Power Mode，在编辑时产生粒子效果，突出显示光标周围的文本

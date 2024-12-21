@@ -363,7 +363,20 @@ const CSS_NAV: NavData = {
             desc: "即时按需原子化 CSS 引擎",
             link: "http://www.unocss.cn/",
         },
-        
+        {
+            icon: "https://cssgrid-generator.netlify.app/favicon.ico",
+            title: "CSS Grid Generator",
+            desc: "生成 CSS Grid 网格布局",
+            link: "https://cssgrid-generator.netlify.app/"
+        },
+        {
+            icon: "https://cssgrid-generator.netlify.app/favicon.ico",
+            title: "CSS Buttons",
+            desc: "Explore Cssbuttons.io for a diverse collection of over 100 unique button styles. Get the code you need to enhance your web projects with stylish, functional buttons. Elevate your design with ease and creativity!",
+            link: "https://cssbuttons.io/"
+
+        }
+
     ],
 };
 
@@ -490,8 +503,24 @@ const TOOL_NAV: NavData = {
             desc: "各类开发工具和办公工具的激活码下载和绿色版软件下载。",
             link: "https://blog.idejihuo.com/",
         },
-
-        
+        {
+            icon: "https://img.js.design/assets/webImg/favicon.ico",
+            title: "即时设计",
+            desc: "即时设计是一款在线可协作的UI设计工具，是可协作的在线sketch、国内版figma，拥有海量的设计资源与素材，支持导入sketch格式的源文件。支持创建交互原型、获取设计标注、快速切图、团队协作等工作。",
+            link: "https://js.design/",
+        },
+        {
+            icon: "https://he3app.com/section/logo.png",
+            title: "He3",
+            desc: "开发者工具箱",
+            link: "https://he3app.com/zh/",
+        },
+        {
+            icon: "https://res.u-tools.cn/website5/assets/logo.png",
+            title: "uTools",
+            desc: "效率工具平台",
+            link: "https://www.u.tools/",
+        }
     ],
 };
 
@@ -740,6 +769,20 @@ const LEARN_NAV: NavData = {
             link: "https://www.runoob.com",
         },
         {
+            icon: "https://www.w3schools.com/favicon.ico",
+            title: "w3schools",
+            desc: "Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, Python, PHP, Bootstrap, Java, XML and more.",
+            link: "https://www.w3schools.com/",
+
+        },
+        {
+            icon: "https://www.w3school.com.cn/ui2019/logo-32-red.png",
+            title: "w3school",
+            desc: "w3school 在线教程",
+            link: "https://www.w3school.com.cn",
+
+        },
+        {
             icon: "https://es6.ruanyifeng.com/images/cover_thumbnail_3rd.jpg",
             title: "ES6 入门教程",
             desc: "阮一峰的网络日志",
@@ -751,6 +794,7 @@ const LEARN_NAV: NavData = {
             desc: "Markdown中文指南",
             link: "https://www.markdown.cn/",
         },
+
     ],
 }
 
@@ -805,8 +849,8 @@ const HUB_NAV: NavData = {
 }
 
 const OTHER_NAV: NavData = {
-    title:"其它",
-    items:[
+    title: "其它",
+    items: [
         {
             icon: "https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico",
             title: "微信公众平台",
@@ -861,7 +905,7 @@ const OTHER_NAV: NavData = {
             desc: '开发者导航',
             link: "https://www.zdzn.net/",
         },
-        
+
     ]
 }
 
