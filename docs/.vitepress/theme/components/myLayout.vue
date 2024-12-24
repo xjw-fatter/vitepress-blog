@@ -1,10 +1,13 @@
-<!--Layout.vue-->
+<!--myLayout.vue-->
 <template>
     <Layout>
+        <template #doc-footer-before>
+            <BackTop></BackTop>
+        </template>
         <template #doc-after>
             <div style="margin-top: 24px">
                 <!-- 评论插件 -->
-                <Giscus id="comments" :theme="isDark ? 'dark' : 'light'" v-bind="{...giscusOptions}" />
+                <Giscus id="comments"  :theme="isDark ? 'dark' : 'light'" v-bind="{ ...giscusOptions }" />
             </div>
         </template>
     </Layout>
@@ -15,17 +18,18 @@ import Giscus from "@giscus/vue";
 import DefaultTheme from "vitepress/theme";
 import { watch } from "vue";
 import { inBrowser, useData } from "vitepress";
+import BackTop from './backTop.vue'
 
-const { isDark, page } = useData();
+const { isDark } = useData();
 
 const { Layout } = DefaultTheme;
 
-const giscusOptions = {
+const giscusOptions: any = {
     repo: "xjw-fatter/vitepress-blog",
     repoId: "R_kgDONFEywA",
     category: "Announcements",
     categoryId: "DIC_kwDONFEywM4ClHhN",
-    term: "!!!" ,
+    term: "!!!",
     mapping: "specific",
     strict: 1,
     reactionsEnabled: 1,
@@ -33,12 +37,12 @@ const giscusOptions = {
     inputPosition: "top",
     lang: "zh-CN",
     loading: "lazy",
-    crossorigin: "anonymous"
-}
+    crossorigin: "anonymous",
+};
 
 watch(isDark, (dark) => {
     if (!inBrowser) return;
-    console.log('myLayout.vue log', dark);
+    console.log("myLayout.vue log", dark);
 
     const iframe = document
         .querySelector("giscus-widget")

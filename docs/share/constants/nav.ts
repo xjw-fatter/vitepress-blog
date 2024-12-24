@@ -370,13 +370,17 @@ const CSS_NAV: NavData = {
             link: "https://cssgrid-generator.netlify.app/"
         },
         {
-            icon: "https://cssgrid-generator.netlify.app/favicon.ico",
+            icon: "https://cssbuttons.io/favicon-32x32.png",
             title: "CSS Buttons",
             desc: "Explore Cssbuttons.io for a diverse collection of over 100 unique button styles. Get the code you need to enhance your web projects with stylish, functional buttons. Elevate your design with ease and creativity!",
             link: "https://cssbuttons.io/"
-
+        },
+        {
+            icon: "https://uiverse.io/favicon-32x32.png",
+            title: "Uiverse",
+            desc: "The Largest Library of Open-Source UI elements",
+            link: "https://uiverse.io/"
         }
-
     ],
 };
 

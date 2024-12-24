@@ -1,7 +1,7 @@
 // https://vitepress.dev/guide/custom-theme
-import { h } from 'vue'
+import { h, nextTick, onMounted, watch } from 'vue'
 import type { Theme } from "vitepress";
-import { inBrowser } from "vitepress";
+import { inBrowser, useRoute } from "vitepress";
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 import busuanzi from "busuanzi.pure.js";
@@ -14,6 +14,7 @@ import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
 import { LIVE2D_MODELS } from '../../share/constants'; // 看板娘模版数据
 import { listener } from '../../share/utils';
+import mediumZoom from "medium-zoom";
 
 export default {
   extends: DefaultTheme,
@@ -81,5 +82,19 @@ export default {
       });
       listener.copy();
     }
-  }
+  },
+  setup() {
+    const route = useRoute();
+    const initZoom = () => {
+      // mediumZoom('[data-zoomable]', { background: 'var(--vp-c-bg)' }); // 默认
+      mediumZoom(".main img", { background: "var(--vp-c-bg)" }); // 不显式添加{data-zoomable}的情况下为所有图像启用此功能
+    };
+    onMounted(() => {
+      initZoom();
+    });
+    watch(
+      () => route.path,
+      () => nextTick(() => initZoom())
+    );
+  },
 } satisfies Theme
