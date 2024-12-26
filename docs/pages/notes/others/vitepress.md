@@ -131,7 +131,7 @@ VitePress 是仅 ESM 的软件包。不要使用 `require()` 导入它，并确�
 
 在`themeConfig`的`search`字段设置搜索框配置，这里使用`local`, 可以使用`algolia`,其他配置参见[siteConfig](https://vitepress.dev/reference/site-config) 和 [themeConfig](https://vitepress.dev/zh/reference/default-theme-config)
 
-```ts{9,10-42,60}
+```ts{12-63}
 import { defineConfig } from "vitepress";
 
 export default defineConfig({
@@ -386,7 +386,7 @@ features:
 ```
 
 预览图:
-![vitepress blog 预览图 0](/images/vitepress0.png)
+![vitepress blog 预览图 0](/images/vitepress0.png){data-zoomable}
 
 ## 打包部署
 
@@ -434,7 +434,7 @@ git push -u origin main
 使用 github pages 有两种方式，一种是通过分支部署，通常要写一个`deploy.sh`,在提交代码之后执行该脚本，将打包之后的产物放到另一个分支上，通过 github pages `Deploy from a branch` 方式部署，另一种通过`github actions`来部署,这里使用`github actions` 来部署，更加快捷，每次提交完代码自动构建部署。
 :::
 
-![vitepress blog 预览图 1](/images/vitepress1.png)
+![vitepress blog 预览图 1](/images/vitepress1.png){data-zoomable}
 如上图所示，我们在 github`vitepress-blog`仓库的`Settings`里面，找到`Pages`, 部署方式选择`Github Actions`,下面编写 github 的`workflows`。
 
 执行下面命令创建`.github/workflows` 目录 和生成该目录下的`deploy.yml` 文件
@@ -520,9 +520,9 @@ github actions 如果报错：Error: No pnpm version is specified. Please specif
 :::
 
 **Github Actions 位置**：
-![vitepress blog 预览图 2](/images/vitepress2.png)
+![vitepress blog 预览图 2](/images/vitepress2.png){data-zoomable}
 **查看部署流程**：
-![vitepress blog 预览图 3](/images/vitepress3.png)
+![vitepress blog 预览图 3](/images/vitepress3.png){data-zoomable}
 
 **部署完成之后，访问 Github Pages 的链接，即可访问博客系统**
 
@@ -1280,8 +1280,8 @@ pnpm i busuanzi.pure.js
 
 注册[umami](https://cloud.umami.is)并配置你的访问统计链接：
 
-![vitepress blog 预览图 4](/images/vitepress4.png)
-![vitepress blog 预览图 5](/images/vitepress5.png)
+![vitepress blog 预览图 4](/images/vitepress4.png){data-zoomable}
+![vitepress blog 预览图 5](/images/vitepress5.png){data-zoomable}
 
 修改配置文件`docs/.vitepress/config.mts`
 ```ts
@@ -1421,9 +1421,9 @@ pnpm i -D @giscus/vue
 ```
 
 按照文档指引填入相关内容：
-![vitepress blog 预览图 6](/images/vitepress6.png)
+![vitepress blog 预览图 6](/images/vitepress6.png){data-zoomable}
 记住以下参数：
-![vitepress blog 预览图 7](/images/vitepress7.png)
+![vitepress blog 预览图 7](/images/vitepress7.png){data-zoomable}
 
 创建组件`docs/.vitepress/theme/components/myLayout.vue`，添加`giscus` 评论组件。
 
@@ -1656,7 +1656,7 @@ watch(isDark, (dark) => {
 
 **6.7 效果如下:**
 
-![vitepress blog 预览图 8](/images/vitepress8.png)
+![vitepress blog 预览图 8](/images/vitepress8.png){data-zoomable}
 
 ### 8. algolia搜索配置
 
