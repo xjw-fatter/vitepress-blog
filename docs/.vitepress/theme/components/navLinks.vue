@@ -2,10 +2,13 @@
 import { computed, ref } from "vue";
 import { withBase } from "vitepress";
 import { NavDataItem } from "../../../share/types/index.type";
+import { utils } from "../../../share/utils/utils";
 const props = defineProps<{
     title: string;
     items: NavDataItem[];
 }>();
+
+const isMobile = ref<boolean>(utils.isMobile());
 
 const formatTitle = computed(() => {
     return props.title;
@@ -15,36 +18,36 @@ const onLinkClick = (link: string) => {
 };
 
 const showMore = ref(true)
-const onTitleClick = ()=>{
+const onTitleClick = () => {
     showMore.value = !showMore.value;
 }
 
 </script>
 
 <template>
-    <h4 v-if="title" :id="formatTitle" tabindex="-1" class="nav-links-title" >
+    <h4 v-if="title" :id="formatTitle" tabindex="-1" class="nav-links-title">
         <div>{{ title }}</div>
         <a class="header-anchor" :href="`#${formatTitle}`" aria-hidden="true"></a>
         <div class="vpi-chevron-right caret-icon arrow" :class="[showMore && 'down']" @click="onTitleClick()"></div>
     </h4>
     <div class="nav-links" v-show="showMore">
-        <div v-for="{ icon, title, desc, link } in items" :key="link" @click="onLinkClick(link)" class="nav-link" :id="formatTitle">
+        <div v-for="{ icon, title, desc, link } in items" :key="link" @click="onLinkClick(link)" class="nav-link"
+            :id="formatTitle">
             <div class="box">
                 <div class="box-header">
                     <div v-if="typeof icon === 'object'" class="icon" v-html="icon.svg"></div>
                     <div v-else-if="icon && typeof icon === 'string'" class="icon">
                         <img :src="withBase(icon)" :alt="title" onerror="this.parentElement.style.display='none'" />
                     </div>
-                    <h5 v-if="title"  class="title">{{ title }}</h5>
+                    <h5 v-if="title" class="title">{{ title }}</h5>
                 </div>
-                <div v-if="desc" class="desc">{{ desc }}</div>
+                <div class="desc">{{ desc }}</div>
             </div>
         </div>
     </div>
 </template>
 
 <style scoped lang="scss">
-
 .nav-links {
     --my-nav-gap: 10px;
     display: grid;
@@ -54,13 +57,16 @@ const onTitleClick = ()=>{
     grid-auto-flow: row dense;
     justify-content: center;
     margin-top: var(--my-nav-gap);
-    &-title{
+
+    &-title {
         position: relative;
         display: flex;
         justify-content: space-between;
-        .arrow{
+
+        .arrow {
             padding-left: 60px;
-            &.down{
+
+            &.down {
                 transform: rotate(90deg);
             }
         }
@@ -78,6 +84,14 @@ const onTitleClick = ()=>{
 @media (min-width: 960px) {
     .nav-links {
         --my-nav-gap: 20px;
+        .nav-link {
+            &:hover {
+                box-shadow: var(--vp-shadow-2);
+                border-color: var(--vp-c-brand);
+                text-decoration: initial;
+                background-color: var(--vp-c-bg);
+            }
+        }
     }
 }
 
@@ -94,13 +108,6 @@ const onTitleClick = ()=>{
         text-decoration: inherit;
         background-color: var(--vp-c-bg-alt);
         transition: all 0.25s;
-
-        &:hover {
-            box-shadow: var(--vp-shadow-2);
-            border-color: var(--vp-c-brand);
-            text-decoration: initial;
-            background-color: var(--vp-c-bg);
-        }
 
         .box {
             display: flex;
@@ -150,6 +157,7 @@ const onTitleClick = ()=>{
 
         .desc {
             display: -webkit-box;
+            line-clamp: 2;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;

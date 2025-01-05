@@ -2,6 +2,8 @@
 title: vscode扩展
 ---
 
+# vscode扩展
+
 ## 智能编程助手
 - [TONGYI Lingma](https://marketplace.visualstudio.com/items?itemName=Alibaba-Cloud.tongyi-lingma) - 通义灵码-灵动指间，快码加编，你的智能编码助手
 - [MarsCode AI: Coding Assistant](https://marketplace.visualstudio.com/items?itemName=MarsCode.marscode-extension) - 豆包旗下的智能编程助手
@@ -48,13 +50,10 @@ title: vscode扩展
 - [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) - 实现多人实时协作编辑代码
 - [Performance Insights](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-profile-viewer) - 分析和可视化VSCode性能，帮助优化编辑器性能
 - [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) - 使用VSCode调试Chrome浏览器中的JavaScript应用
-- [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer) - 为匹配的括号对提供不同的颜色，便于阅读复杂的代码结构
 - [Indent-Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) - 为缩进级别添加彩虹色，使代码层次更加清晰
 - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) - 帮助管理和切换不同的项目，提高工作效率
 - [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) - 支持远程开发，包括在容器内、远程SSH服务器或Windows子系统上开发
 - [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.bookmarks) - 在代码中设置书签，方便快速跳转到特定位置
-- [CodeMap](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-codemap) - 以图形化的方式展示代码结构，帮助理解复杂项目
-- [Node Debug](https://marketplace.visualstudio.com/items?itemName=ms-vscode.node-debug2) - 调试Node.js应用
 - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) - Docker开发工具，支持构建、运行和调试Docker容器
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) - 为文件和文件夹提供美观的图标
 - [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme) - 一款流行的深色主题，适合长时间编码
@@ -65,3 +64,4 @@ title: vscode扩展
 - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) - 启动一个本地开发服务器，支持自动刷新页面
 - [Image preview](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview) - 在代码编辑器的边距（gutter）和悬停时显示图像预览
 - [Power Mode](https://marketplace.visualstudio.com/items?itemName=hoovercj.vscode-power-mode) - 启用Power Mode，在编辑时产生粒子效果，突出显示光标周围的文本
+- [Json Crack](https://marketplace.visualstudio.com/items?itemName=AykutSarac.jsoncrack-vscode) - 可视化JSON数据

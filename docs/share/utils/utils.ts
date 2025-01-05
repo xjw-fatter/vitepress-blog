@@ -132,6 +132,23 @@ export const utils = {
                 typeof func === "function" && func();
             }, wait);
         }
-    }
-
+    },
+    /**
+     * 判断当前设备是否为移动设备
+     * 
+     * 该函数通过检查浏览器的 userAgent 字符串来确定设备类型
+     * 如果 userAgent 中包含 "Mobile" 或 "Tablet" 等关键字，则认为是移动设备
+     * 
+     * @returns {boolean} 如果是移动设备则返回 true，否则返回 false
+     */
+    isMobile: () => {
+        try {
+            const userAgent = navigator.userAgent || '';
+            // 移动设备浏览器的userAgent字符串中会包含"Mobile"或"Tablet"等关键字
+            return /Mobile|Tablet/i.test(userAgent);
+        } catch (error) {
+            console.error('Error checking user agent:', error);
+            return false;
+        }
+    },
 };

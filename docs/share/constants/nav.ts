@@ -1,7 +1,7 @@
 import { NavData } from "../types/index.type";
 // AI FILM GAME VUE ANGULAR JAVASCRIPT CSS TOOL MINIPROGRAM NODE CHART BUILD SITE_GRNERATE ICONS LEARN HUB OTHER
 const AI_NAV: NavData = {
-    title: "AI 导航",
+    title: "AI助手",
     items: [
         {
             icon: "https://openai.com/favicon.ico",
@@ -380,6 +380,24 @@ const CSS_NAV: NavData = {
             title: "Uiverse",
             desc: "The Largest Library of Open-Source UI elements",
             link: "https://uiverse.io/"
+        },
+        {
+            icon: "https://www.cssmatic.com/img/favicon.png",
+            title: "CSSmatic",
+            desc: "CSSmatic is a collection of CSS tools",
+            link: "https://www.cssmatic.com/"
+        },
+        {
+            icon: "https://www.cssportal.com/favicon.ico",
+            title: "CSS Portal",
+            desc: "CSS Portal is a collection of CSS tools",
+            link: "https://www.cssportal.com/"
+        },
+        {
+            icon: "https://magicui.design/icon.png",
+            title: "magicui",
+            desc: "Magic UI is a collection of re-usable components that you can copy and paste into your web apps.",
+            link: "https://magicui.design/docs"
         }
     ],
 };
@@ -524,6 +542,12 @@ const TOOL_NAV: NavData = {
             title: "uTools",
             desc: "效率工具平台",
             link: "https://www.u.tools/",
+        },
+        {
+            icon: "https://jsoncrack.com/favicon.ico",
+            title: "Json Crack",
+            desc: "JSON Crack Editor is a tool for visualizing into graphs, analyzing, editing, formatting, querying, transforming and validating JSON, CSV, YAML, XML, and more.",
+            link: "https://jsoncrack.com/editor",
         }
     ],
 };

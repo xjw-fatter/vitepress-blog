@@ -2,6 +2,8 @@
 title: 博客搭建指南
 ---
 
+# 博客搭建指南
+
 + 声明：本文基于[VitePress 搭建博客系统指南](https://juejin.cn/post/7409865546197893171)搭建博客后重新整理记录一下。
 + [VitePress](https://vitepress.dev/zh/)是一个静态站点生成器 (SSG)，专为构建快速、以内容为中心的站点而设计。简而言之，VitePress 获取用 Markdown 编写的内容，对其应用主题，并生成可以轻松部署到任何地方的静态 HTML 页面。
 
