@@ -5,16 +5,14 @@ import { inBrowser, useRoute } from "vitepress";
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 import busuanzi from "busuanzi.pure.js";
-import visitorPanel from "./components/visitorPanel.vue"; // 访问统计
-import confetti from "./components/confetti.vue"; // 纸屑效果
-import navLinks from "./components/navLinks.vue"; // 导航
+
 import navBarTitleAfter from './components/navBarTitleAfter.vue' // tag 展示版本号
 import myLayout from "./components/myLayout.vue"; // 接入评论插件
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
 import { LIVE2D_MODELS } from '../../share/constants'; // 看板娘模版数据
-import { listener } from '../../share/utils';
 import mediumZoom from "medium-zoom";
+import { registerComponents } from './registerComponents';
 
 export default {
   extends: DefaultTheme,
@@ -26,9 +24,7 @@ export default {
   },
   async enhanceApp({ app, router, siteData }) {
     // ...
-    app.component("confetti", confetti);
-    app.component("VisitorPanel", visitorPanel);
-    app.component("navLinks", navLinks);
+		registerComponents(app);
     app.use(ElementPlus);
     if (inBrowser) {
       router.onAfterRouteChanged = () => {
@@ -80,7 +76,6 @@ export default {
           },
         },
       });
-      // listener.copy();
     }
   },
   setup() {
