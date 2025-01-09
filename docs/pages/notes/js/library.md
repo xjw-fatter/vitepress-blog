@@ -79,3 +79,202 @@ document.getElementById('file').addEventListener('change', (e) => {
 
 ## 生成PowerPoint
 [PptxGenJS](https://gitbrent.github.io/PptxGenJS/) Javascript生成PowerPoint
+
+## 代码混淆
+
+[javascript-obfuscator](https://www.npmjs.com/package/javascript-obfuscator) 一个javascript代码混淆工具，让你的代码看起来让人痛苦。
+
+以下是一个结合`gulp`将html中script内容混淆的例子：
+
+::: code-group
+
+```json [package.json]
+{
+  "scripts": {
+    "build:deep": "npx gulp --gulpfile gulpfile-deep.js"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-htmlmin": "^5.0.1"
+  },
+  "devDependencies": {
+    "gulp-cheerio": "^1.0.0",
+    "javascript-obfuscator": "^4.1.1"
+  }
+}
+```
+
+```js [gulpfile-deep.js]
+// 引入所需的库
+const gulp = require('gulp');
+const htmlmin = require('gulp-htmlmin');
+const cheerio = require('gulp-cheerio');
+const JavaScriptObfuscator = require('javascript-obfuscator'); 
+// https://github.com/javascript-obfuscator/gulp-javascript-obfuscator
+// https://www.npmjs.com/package/javascript-obfuscator
+// https://obfuscator.io/
+const obfuscatorOptions = {
+  // 默认预设，高性能
+  default: {
+    compact: true,
+    controlFlowFlattening: false,
+    deadCodeInjection: false,
+    debugProtection: false,
+    debugProtectionInterval: 0,
+    disableConsoleOutput: false,
+    identifierNamesGenerator: 'hexadecimal',
+    log: false,
+    numbersToExpressions: false,
+    renameGlobals: false,
+    selfDefending: false,
+    simplify: true,
+    splitStrings: false,
+    stringArray: true,
+    stringArrayCallsTransform: false,
+    stringArrayCallsTransformThreshold: 0.5,
+    stringArrayEncoding: [],
+    stringArrayIndexShift: true,
+    stringArrayRotate: true,
+    stringArrayShuffle: true,
+    stringArrayWrappersCount: 1,
+    stringArrayWrappersChainedCalls: true,
+    stringArrayWrappersParametersMaxCount: 2,
+    stringArrayWrappersType: 'variable',
+    stringArrayThreshold: 0.75,
+    unicodeEscapeSequence: false
+  },
+  // 高混淆，低性能
+  high: {
+    compact: true,
+    controlFlowFlattening: true,
+    controlFlowFlatteningThreshold: 1,
+    deadCodeInjection: true,
+    deadCodeInjectionThreshold: 1,
+    debugProtection: true,
+    debugProtectionInterval: 4000,
+    disableConsoleOutput: true,
+    identifierNamesGenerator: 'hexadecimal',
+    log: false,
+    numbersToExpressions: true,
+    renameGlobals: false,
+    selfDefending: true,
+    simplify: true,
+    splitStrings: true,
+    splitStringsChunkLength: 5,
+    stringArray: true,
+    stringArrayCallsTransform: true,
+    stringArrayEncoding: ['rc4'],
+    stringArrayIndexShift: true,
+    stringArrayRotate: true,
+    stringArrayShuffle: true,
+    stringArrayWrappersCount: 5,
+    stringArrayWrappersChainedCalls: true,
+    stringArrayWrappersParametersMaxCount: 5,
+    stringArrayWrappersType: 'function',
+    stringArrayThreshold: 1,
+    transformObjectKeys: true,
+    unicodeEscapeSequence: false
+  },
+  // 中等混淆，最佳性能
+  in: {
+    compact: true,
+    controlFlowFlattening: true,
+    controlFlowFlatteningThreshold: 0.75,
+    deadCodeInjection: true,
+    deadCodeInjectionThreshold: 0.4,
+    debugProtection: false,
+    debugProtectionInterval: 0,
+    disableConsoleOutput: true,
+    identifierNamesGenerator: 'hexadecimal',
+    log: false,
+    numbersToExpressions: true,
+    renameGlobals: false,
+    selfDefending: true,
+    simplify: true,
+    splitStrings: true,
+    splitStringsChunkLength: 10,
+    stringArray: true,
+    stringArrayCallsTransform: true,
+    stringArrayCallsTransformThreshold: 0.75,
+    stringArrayEncoding: ['base64'],
+    stringArrayIndexShift: true,
+    stringArrayRotate: true,
+    stringArrayShuffle: true,
+    stringArrayWrappersCount: 2,
+    stringArrayWrappersChainedCalls: true,
+    stringArrayWrappersParametersMaxCount: 4,
+    stringArrayWrappersType: 'function',
+    stringArrayThreshold: 0.75,
+    transformObjectKeys: true,
+    unicodeEscapeSequence: false
+  },
+  // 低混淆，高性能
+  low: {
+    compact: true,
+    controlFlowFlattening: false,
+    deadCodeInjection: false,
+    debugProtection: false,
+    debugProtectionInterval: 0,
+    disableConsoleOutput: true,
+    identifierNamesGenerator: 'hexadecimal',
+    log: false,
+    numbersToExpressions: false,
+    renameGlobals: false,
+    selfDefending: true,
+    simplify: true,
+    splitStrings: false,
+    stringArray: true,
+    stringArrayCallsTransform: false,
+    stringArrayEncoding: [],
+    stringArrayIndexShift: true,
+    stringArrayRotate: true,
+    stringArrayShuffle: true,
+    stringArrayWrappersCount: 1,
+    stringArrayWrappersChainedCalls: true,
+    stringArrayWrappersParametersMaxCount: 2,
+    stringArrayWrappersType: 'variable',
+    stringArrayThreshold: 0.75,
+    unicodeEscapeSequence: false
+  }
+}
+
+/**
+ * Gulp任务：深度混淆HTML中的JavaScript代码
+ * 该任务读取指定的HTML文件，混淆文件中包含的JavaScript代码，并压缩HTML文件
+ */
+gulp.task('deep-obfuscate-js-in-html', function () {
+  console.log('deep-obfuscate-js-in-html');
+  // 指定需要处理的 HTML 文件路径
+  return gulp.src('src/*.html')
+    .pipe(cheerio({
+      run: function ($, file) {
+        // 查找所有的 <script> 标签并进行混淆处理
+        $('script').each(function () {
+          const scriptContent = $(this).html();
+          if (scriptContent) {
+            // 使用 javascript-obfuscator 深度混淆 JavaScript 代码
+            const obfuscated = JavaScriptObfuscator.obfuscate(scriptContent, obfuscatorOptions.default).getObfuscatedCode();
+            $(this).html(obfuscated);
+          }
+        });
+      },
+      parserOptions: { decodeEntities: false }
+    }))
+    // 压缩HTML文件，包括去掉空格、压缩CSS、去掉注释和压缩JS
+    .pipe(htmlmin({
+      collapseWhitespace: true,
+      minifyCSS: true,
+      removeComments: true,
+      minifyJS: true
+    }))
+    // 将处理后的文件输出到目标文件夹
+    .pipe(gulp.dest('dist'));
+});
+
+// 定义 default 任务
+gulp.task('default', gulp.series('deep-obfuscate-js-in-html'));
+```
+
+:::
+
+

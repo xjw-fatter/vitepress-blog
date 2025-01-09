@@ -1,7 +1,7 @@
 <template>
 	<div></div>
 </template>
-<script setup lang="ts">
+<script setup lang="ts" name="Confetti">
 import confetti from "canvas-confetti";
 import { inBrowser } from "vitepress";
 

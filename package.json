@@ -1,6 +1,6 @@
 {
   "name": "vitepress-blog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -16,9 +16,12 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "packageManager": "pnpm@7.3.0",
   "dependencies": {
+    "@vitejs/plugin-vue-jsx": "^4.1.1",
+    "@vitepress-code-preview/container": "^1.0.8",
+    "@vitepress-code-preview/plugin": "^1.0.6",
     "busuanzi.pure.js": "^1.0.3",
     "canvas-confetti": "^1.9.3",
     "element-plus": "^2.8.8",
@@ -30,8 +33,12 @@
     "@giscus/vue": "^3.0.0",
     "@types/node": "^22.9.0",
     "chalk": "4.1.0",
+    "markdown-it-container": "^4.0.0",
     "medium-zoom": "^1.1.0",
     "sass": "^1.81.0",
+    "unplugin-auto-import": "^19.0.0",
+    "unplugin-vue-components": "^28.0.0",
+    "vitepress-plugin-sandpack": "^1.1.4",
     "vitepress-sidebar": "^1.25.0"
   }
 }

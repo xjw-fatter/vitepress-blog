@@ -17,7 +17,7 @@
 	</div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts" name="VisitorPanel"">
 import { inBrowser } from "vitepress";
 const onLinkUmiHandle = () => {
 	if (inBrowser) {

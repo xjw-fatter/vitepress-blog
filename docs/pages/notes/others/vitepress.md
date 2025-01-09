@@ -408,7 +408,7 @@ $ git init
 根目录添加`.gitignore` 文件
 > 忽略不需要提交到 github 的文件以及目录
 
-```.gitignore
+```txt [.gitignore]
 node_modules
 dist
 cache
@@ -921,7 +921,7 @@ github actions 如果报错：Error: No pnpm version is specified. Please specif
 
 ### 1. 自动生成侧边栏
 
-```pnpm
+```sh [pnpm]
 pnpm i -D vitepress-sidebar
 ```
 
@@ -1078,7 +1078,7 @@ export default defineConfig({
 
 配置参考：https://github.com/vuejs/vitepress/issues/854
 
-```pnpm
+```sh [pnpm]
 pnpm i -D medium-zoom
 ```
 
@@ -1111,7 +1111,7 @@ export default {
 
 [oh-my-live2d](https://github.com/oh-my-live2d/oh-my-live2d) Live2D For Web 组件, 快速为您的个人网站加入Live2D看板娘,去[官网查看效果](https://www.oml2d.com/)
 
-```pnpm
+```sh [pnpm]
 pnmpm i  oh-my-live2d
 ```
 
@@ -1229,7 +1229,7 @@ export default {
 
 ### 4. 五彩纸屑
 
-```pnpm
+```sh [pnpm]
 pnpm add canvas-confetti
 ```
 
@@ -1418,7 +1418,7 @@ export default {
 
 使用[giscus](https://giscus.app/zh-CN)来做评论模块，具体参考文档
 
-```pnpm
+```sh [pnpm]
 pnpm i -D @giscus/vue
 ```
 
@@ -1731,3 +1731,58 @@ export default defineConfig({
 ```
 
 
+### 9. 实时编码
+
+[itepress-plugin-sandpack](https://vitepress-sandbox.js-bridge.com/get-started/introduction.html):sandpack 插件，实时编码
+
+::: sandbox {template=vite-vue}
+<template>
+	<div>
+  	<h1>Hello {{ data }}</h1>
+	</div>
+</template>
+
+<script setup>
+import { ref } from "vue";
+const data = ref("world");
+</script>
+
+<style>
+h1 {
+  font-size: 12px;
+}
+</style>
+:::
+
+### 10. 组件预览
+
+[vitepress-code-preview](https://welives.github.io/vitepress-code-preview/guide.html): 对嵌入的Vue 示例代码增加演示功能
+
+:::demo
+
+```vue
+<template>
+  <div>{{ title }}</div>
+</template>
+<script lang="ts" setup>
+import { ref, defineComponent } from 'vue'
+const title = ref('this is vue demo')
+</script>
+```
+
+:::
+
+:::demo
+
+```jsx
+import { defineComponent, ref } from 'vue'
+
+export default defineComponent({
+  setup() {
+    const title = ref('this is jsx demo')
+    return () => <div>{title.value}</div>
+  },
+})
+```
+
+:::

@@ -5,27 +5,29 @@ import { inBrowser, useRoute } from "vitepress";
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 import busuanzi from "busuanzi.pure.js";
-
-import navBarTitleAfter from './components/navBarTitleAfter.vue' // tag 展示版本号
-import myLayout from "./components/myLayout.vue"; // 接入评论插件
-import ElementPlus from 'element-plus';
-import 'element-plus/dist/index.css';
+import myLayout from "./components/myLayout.vue";
 import { LIVE2D_MODELS } from '../../share/constants'; // 看板娘模版数据
 import mediumZoom from "medium-zoom";
 import { registerComponents } from './registerComponents';
+
+import { Sandbox } from 'vitepress-plugin-sandpack';
+import 'vitepress-plugin-sandpack/dist/style.css';
+
+import DemoPreview, { useComponents } from '@vitepress-code-preview/container'
+import '@vitepress-code-preview/container/dist/style.css'
 
 export default {
   extends: DefaultTheme,
   Layout: () => {
     return h(myLayout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
-      'nav-bar-title-after': () => h(navBarTitleAfter),
     })
   },
   async enhanceApp({ app, router, siteData }) {
     // ...
 		registerComponents(app);
-    app.use(ElementPlus);
+		app.component('Sandbox', Sandbox);
+		app.component('DemoPreview', DemoPreview);
     if (inBrowser) {
       router.onAfterRouteChanged = () => {
         busuanzi.fetch();

@@ -1,27 +1,3 @@
-<script setup lang="ts">
-import { computed, ref } from "vue";
-import { withBase } from "vitepress";
-import { NavDataItem } from "../../../share/types/index.type";
-import { utils } from "../../../share/utils/utils";
-const props = defineProps<{
-	title: string;
-	items: NavDataItem[];
-}>();
-
-const formatTitle = computed(() => {
-	return props.title;
-});
-const onLinkClick = (link: string) => {
-	window.open(link, "_blank");
-};
-
-const showMore = ref(true)
-const onTitleClick = () => {
-	showMore.value = !showMore.value;
-}
-
-</script>
-
 <template>
 	<h4 v-if="title" :id="formatTitle" tabindex="-1" class="nav-links-title">
 		<div>{{ title }}</div>
@@ -44,6 +20,28 @@ const onTitleClick = () => {
 		</div>
 	</div>
 </template>
+
+<script setup lang="ts" name="NavLinks"">
+import { computed, ref } from "vue";
+import { withBase } from "vitepress";
+import { NavDataItem } from "../../../share/types/index.type";
+
+const props = defineProps<{
+	title: string;
+	items: NavDataItem[];
+}>();
+
+const formatTitle = computed(() => {
+	return props.title;
+});
+const onLinkClick = (link: string) => {
+	window.open(link, "_blank");
+};
+const showMore = ref(true)
+const onTitleClick = () => {
+	showMore.value = !showMore.value;
+}
+</script>
 
 <style scoped lang="scss">
 .nav-links {

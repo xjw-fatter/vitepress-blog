@@ -1,6 +1,10 @@
 <!--myLayout.vue-->
 <template>
 	<Layout>
+		<template #nav-bar-title-after>
+			<!-- <el-tag text style="vertical-align: middle;margin-left:8px;color: #5e3af2;border-color: #5e3af2;" size="small"
+			effect="plain">{{ packageConfig.version }}</el-tag> -->
+    </template>
 		<template #doc-footer-before>
 			<BackTop></BackTop>
 		</template>
@@ -16,13 +20,13 @@
 	</Layout>
 </template>
 
-<script lang="ts" setup>
-import Giscus from "@giscus/vue";
-import DefaultTheme from "vitepress/theme";
+<script lang="ts" setup name="MyLayout">
 import { ref, watch } from "vue";
 import { inBrowser, useData } from "vitepress";
+import DefaultTheme from "vitepress/theme";
+import Giscus from "@giscus/vue";
 import BackTop from './backTop.vue'
-
+// import packageConfig from '../../../../package.json'
 
 const usedColors = new Set();
 const getRandomLightColor = () => {

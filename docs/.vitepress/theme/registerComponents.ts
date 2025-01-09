@@ -8,5 +8,5 @@ export function registerComponents(app: App) {
 	app.component("confetti", confetti);
 	app.component("VisitorPanel", visitorPanel);
 	app.component("navLinks", navLinks);
-	app.component("about",about)
+	app.component("about",about);
 }

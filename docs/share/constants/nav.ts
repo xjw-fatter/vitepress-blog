@@ -548,7 +548,19 @@ const TOOL_NAV: NavData = {
             title: "Json Crack",
             desc: "JSON Crack Editor is a tool for visualizing into graphs, analyzing, editing, formatting, querying, transforming and validating JSON, CSV, YAML, XML, and more.",
             link: "https://jsoncrack.com/editor",
-        }
+        },
+				{
+					icon:"https://www.jq22.com/favicon.ico",
+					title:"jQuery插件库",
+					desc:"收集最全最新最好的jQuery插件",
+					link:"https://www.jq22.com/"
+				},
+				{
+					icon:"https://www.bootcdn.cn/assets/ico/favicon.ico?1721497202689",
+					title:"BootCDN",
+					desc:"Bootstrap 中文网开源项目免费 CDN 加速服务 铂特优选",
+					link:"https://www.bootcdn.cn/"
+				}
     ],
 };
 

@@ -1,6 +1,14 @@
 import { defineConfig } from "vitepress";
 import { basePath, nav, searchOptions, setFooter, sidebar } from "./theme/configs";
-
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import container from 'markdown-it-container';
+import { renderSandbox } from 'vitepress-plugin-sandpack';
+import vueJsx from '@vitejs/plugin-vue-jsx'
+import { viteDemoPreviewPlugin } from '@vitepress-code-preview/plugin'
+import { fileURLToPath, URL } from 'node:url'
+import { demoPreviewPlugin } from '@vitepress-code-preview/plugin'
 
 export default defineConfig({
   title: "嘻咦昂向",
@@ -16,10 +24,23 @@ export default defineConfig({
         "data-website-id": "a6fee6db-cc51-4b66-a529-da38c7febe12",
       },
     ], // 站点访问统计umami
+		// ["script",{
+		// 	src:"https://cdn.bootcdn.net/ajax/libs/jquery/1.7.1/jquery.min.js"
+		// }]
   ],
   markdown: {
     // 代码块行号
     lineNumbers: true,
+		config(md) {
+			// the second parameter is html tag name
+      md.use(container, 'sandbox', {
+          render (tokens, idx) {
+            return renderSandbox(tokens, idx, 'sandbox');
+          },
+        });
+				const docRoot = fileURLToPath(new URL('../', import.meta.url))
+				md.use(demoPreviewPlugin, { docRoot })
+    },
   },
   themeConfig: {
     // 网站的logo
@@ -60,6 +81,19 @@ export default defineConfig({
   base: basePath(),
   vite: {
     // Vite 配置选项
+		plugins: [
+			// ...
+			AutoImport({
+				resolvers: [ElementPlusResolver()],
+			}),
+			Components({
+				resolvers: [ElementPlusResolver()],
+			}),
+			viteDemoPreviewPlugin(), vueJsx()
+		],
+		// ssr: {
+		// 	noExternal: ['element-plus']
+		// },
     server: {
       host: "0.0.0.0",
       port: 5173, // 启动端口
