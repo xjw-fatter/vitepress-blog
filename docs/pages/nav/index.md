@@ -50,6 +50,6 @@ import { NAV_DATA } from "../../share/constants/index"
   <div>一些乱七八糟的网址导航～</div>
 </div>
 
-<navLinks v-for="{title, items} in NAV_DATA" :title="title" :items="items"/>
+<NavLinks v-for="{title, items} in NAV_DATA" :title="title" :items="items"/>
 
 <br />

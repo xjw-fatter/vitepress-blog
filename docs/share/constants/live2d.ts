@@ -1,4 +1,4 @@
-import { ModelOptions } from "oh-my-live2d";
+import { ModelOptions } from "oh-my-live2d/dist/types";
 
 export const LIVE2D_MODELS: ModelOptions[] = [
     {

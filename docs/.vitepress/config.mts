@@ -94,6 +94,12 @@ export default defineConfig({
 		// ssr: {
 		// 	noExternal: ['element-plus']
 		// },
+		build: {
+			sourcemap: false, // 构建后是否生成 source map 文件
+			minify: 'terser', // terser 构建后文件体积更小
+			assetsInlineLimit: 4096,
+      chunkSizeWarningLimit: 1000, //chunk 大小警告的限制
+		},
     server: {
       host: "0.0.0.0",
       port: 5173, // 启动端口

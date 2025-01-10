@@ -42,4 +42,4 @@ features:
 
 <confetti />
 
-<visitorPanel />
+<VisitorPanel />

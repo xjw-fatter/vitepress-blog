@@ -1,5 +1,6 @@
 import { DefaultTheme } from "vitepress";
-import { generateSidebar, VitePressSidebarOptions } from "vitepress-sidebar";
+import { generateSidebar } from "vitepress-sidebar";
+import { VitePressSidebarOptions } from "vitepress-sidebar/types";
 import { utils } from "../../share/utils";
 // https://vitepress-sidebar.cdget.com/zhHans/
 // sidebar配置
