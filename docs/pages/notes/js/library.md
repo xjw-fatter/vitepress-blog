@@ -70,6 +70,10 @@ document.getElementById('file').addEventListener('change', (e) => {
 
 ### textbus
 [textbus](https://textbus.io/)支持多前端框架、高性能的富文本库，原生支持 Viewfly、React、Vue 渲染富文本
+### wangeditor
+[wangeditor](https://www.wangeditor.com/)开源 Web 富文本编辑器，开箱即用，配置简单
+### UEditorPlus
+[UEditorPlus](https://open-doc.modstart.com/ueditor-plus/)基于 UEditor 二次开发的富文本编辑器 
 
 ## 大屏适配
 

@@ -35,10 +35,12 @@
     "chalk": "4.1.0",
     "markdown-it-container": "^4.0.0",
     "medium-zoom": "^1.1.0",
+    "mermaid": "^11.4.1",
     "sass": "^1.81.0",
     "terser": "^5.37.0",
     "unplugin-auto-import": "^19.0.0",
     "unplugin-vue-components": "^28.0.0",
+    "vitepress-plugin-mermaid": "^2.0.17",
     "vitepress-plugin-sandpack": "^1.1.4",
     "vitepress-sidebar": "^1.25.0"
   }

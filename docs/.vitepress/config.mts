@@ -9,6 +9,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import { viteDemoPreviewPlugin } from '@vitepress-code-preview/plugin'
 import { fileURLToPath, URL } from 'node:url'
 import { demoPreviewPlugin } from '@vitepress-code-preview/plugin'
+// import { withMermaid } from "vitepress-plugin-mermaid";
 
 export default defineConfig({
   title: "嘻咦昂向",
@@ -38,10 +39,17 @@ export default defineConfig({
             return renderSandbox(tokens, idx, 'sandbox');
           },
         });
-				const docRoot = fileURLToPath(new URL('../', import.meta.url))
-				md.use(demoPreviewPlugin, { docRoot })
+			const docRoot = fileURLToPath(new URL('../', import.meta.url));
+			md.use(demoPreviewPlugin, { docRoot });
     },
   },
+	// mermaid: {
+	// 	// refer https://mermaid.js.org/config/setup/modules/mermaidAPI.html#mermaidapi-configuration-defaults for options
+	// },
+	// // optionally set additional config for plugin itself with MermaidPluginConfig
+	// mermaidPlugin: {
+	// 	class: "mermaid my-class", // set additional css classes for parent container
+	// },
   themeConfig: {
     // 网站的logo
     logo: "/favicon.ico",

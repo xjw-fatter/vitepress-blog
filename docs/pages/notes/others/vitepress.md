@@ -1786,3 +1786,46 @@ export default defineComponent({
 ```
 
 :::
+
+### 11. 流程图
+
++ [vitepress-plugin-mermaid](https://www.npmjs.com/package/vitepress-plugin-mermaid) 添加对Vitepress的mermaid支持。
++ [mermaid](http://mermaid.js.org/)基于JavaScript的图表和图表工具，可呈现受Markdown启发的文本定义，以动态创建和修改图表。
+
+```sh[pnpm]
+pnpm i vitepress-plugin-mermaid mermaid -D
+pnpm install --shamefully-hoist 
+```
+
+::: warning 注意
+mermaid关联依赖本地开发时报错，`--shamefully-hoist` 选项会使 pnpm 无视依赖包之间的版本差异，将所有依赖包提升到项目根目录的 node_modules 中。正常情况下，pnpm 采用一种独特的依赖管理策略，会将不同版本的相同依赖包安装到各自独立的位置，以避免版本冲突。然而，使用 --shamefully-hoist 选项后，这种精细的版本隔离机制被打破。
+
+使用场景与风险：
+
+使用场景：在某些情况下，项目中的多个依赖包可能依赖于同一个包的不同版本，但这些版本之间的差异实际上并不会对项目造成影响。此时，使用 --shamefully-hoist 可以减少项目中依赖包的重复安装，从而减小 node_modules 的体积，提高安装速度。
+
+风险：由于无视版本差异进行提升，可能会导致一些难以调试的问题。比如，某个依赖包期望使用特定版本的某个依赖，但实际被提升到根目录的是另一个版本，这可能会导致该依赖包运行异常，因为不同版本的 API 或行为可能有所不同。
+:::
+
+```js
+// .vitepress/config.js
+import { withMermaid } from "vitepress-plugin-mermaid";
+
+export default withMermaid({
+	mermaid: {
+		// refer https://mermaid.js.org/config/setup/modules/mermaidAPI.html#mermaidapi-configuration-defaults for options
+	},
+	// optionally set additional config for plugin itself with MermaidPluginConfig
+	mermaidPlugin: {
+		class: "mermaid my-class", // set additional css classes for parent container
+	},
+});
+```
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
