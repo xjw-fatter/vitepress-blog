@@ -653,6 +653,12 @@ const TOOL_NAV: NavData = {
 			title: "BootCDN",
 			desc: "Bootstrap 中文网开源项目免费 CDN 加速服务 铂特优选",
 			link: "https://www.bootcdn.cn/"
+		},
+		{
+			icon: "https://dataease.cn/docs/v2/img/logo-white.png",
+			title: "DataEase",
+			desc: "飞致云开源BI工具",
+			link: "https://dataease.cn/docs/v2/desktop/"
 		}
 	],
 };
@@ -859,6 +865,12 @@ const SITE_GRNERATE_NAV: NavData = {
 			desc: "基于 React 的静态网站生成器",
 			link: "https://docusaurus.io/zh-CN",
 		},
+		{
+			icon: "https://www.pintree.io/logo.svg",
+			title: "Pintree",
+			desc: "将浏览器书签转换为目录网站",
+			link: "https://www.pintree.io/zh",
+		},
 	],
 }
 
@@ -1016,8 +1028,8 @@ const OTHER_NAV: NavData = {
 		},
 		{
 			icon: "https://img.alicdn.com/tfs/TB1qEwuzrj1gK0jSZFOXXc7GpXa-32-32.ico",
-			title: "支付宝",
-			desc: "欢迎登录支付宝",
+			title: "支付宝开发者控制台",
+			desc: "登录开发者中心控制台",
 			link: "https://auth.alipay.com/login/ant_sso_index.htm?goto=https%3A%2F%2Fopenhome.alipay.com%2Fplatform%2FdeveloperIndex.htm",
 		},
 		{
@@ -1038,7 +1050,18 @@ const OTHER_NAV: NavData = {
 			desc: '开发者导航',
 			link: "https://www.zdzn.net/",
 		},
-
+		{
+			icon: "https://www.coderutil.com/favicon.ico",
+			title: "coderutil",
+			desc: '程序员盒子 编程导航',
+			link: "https://www.coderutil.com/",
+		},
+		{
+			icon: "https://www.baoboxs.com/favicon.ico",
+			title: "程序员宝盒",
+			desc: '专属程序员的一站式导航',
+			link: "https://www.baoboxs.com/#/",
+		},
 	]
 }
 

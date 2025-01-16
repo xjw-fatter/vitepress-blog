@@ -15,6 +15,7 @@ import 'vitepress-plugin-sandpack/dist/style.css';
 
 import DemoPreview, { useComponents } from '@vitepress-code-preview/container'
 import '@vitepress-code-preview/container/dist/style.css'
+import { utils } from '../../share/utils';
 
 export default {
   extends: DefaultTheme,
@@ -28,14 +29,13 @@ export default {
 		registerComponents(app);
 		app.component('Sandbox', Sandbox);
 		app.component('DemoPreview', DemoPreview);
+
     if (inBrowser) {
       router.onAfterRouteChanged = () => {
         busuanzi.fetch();
       };
-    }
-    if (!(import.meta as any).env.SSR) {
-      // 配置加载看板娘
-      const { loadOml2d } = await import("oh-my-live2d");
+
+			const { loadOml2d } = await import("oh-my-live2d");
       const oml2d = loadOml2d({
         mobileDisplay: false,
         models: LIVE2D_MODELS,
@@ -79,6 +79,7 @@ export default {
         },
       });
 
+			(import.meta as any).env.PROD && utils.prohibitionOfDebugging();
     }
   },
   setup() {

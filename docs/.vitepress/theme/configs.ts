@@ -40,7 +40,7 @@ const defaultOptions: VitePressSidebarOptions = {
 	sortFolderTo: null, // 文件夹在侧边栏中的位置，可以是 top 或 bottom。
 	// 其他
 	keepMarkdownSyntaxFromTitle: false, // 是否保留标题中的 Markdown 语法
-	debugPrint: true, // 是否打印调试信息。
+	debugPrint: false, // 是否打印调试信息。
 	// manualSortFileNameByPriority: [], // 手动指定文件名的优先级排序
 	// excludePattern: [], // 排除匹配模式的文件或文件夹。
 	// excludeFilesByFrontmatterFieldName: "", // 排除前事项中指定字段的文件。
@@ -83,13 +83,13 @@ export const nav: DefaultTheme.Config["nav"] = [
 		activeMatch: "^/pages/notes",
 	},
 	{ text: "导航", link: "/pages/nav/index", activeMatch: "^/pages/nav" },
-	{
-		text: "外链",
-		items: [
-			{ text: "百度", link: "https://kaifa.baidu.com/" },
-			{ text: "掘金", link: "https://juejin.cn/frontend" },
-		],
-	},
+	// {
+	// 	text: "外链",
+	// 	items: [
+	// 		{ text: "百度", link: "https://kaifa.baidu.com/" },
+	// 		{ text: "掘金", link: "https://juejin.cn/frontend" },
+	// 	],
+	// },
 ];
 
 // algolia配置

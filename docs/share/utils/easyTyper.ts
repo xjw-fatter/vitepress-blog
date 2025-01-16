@@ -23,7 +23,7 @@ interface TyperAction {
 class EasyTyper {
   obj: Typer; // 配置对象
   input: Array<string>; // 输入源
-  timer: number; // 定时器
+  timer: any; // 定时器
   typeAction: TyperAction; // 打字机模式类型
   fn: Function; // 完成输入源输出后执行的回调函数
   hooks: Function; // 完成每一帧的输出后的钩子函数

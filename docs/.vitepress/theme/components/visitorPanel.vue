@@ -7,7 +7,10 @@
 					本站总访问量
 					<span id="busuanzi_value_site_pv" class="font-bold">--</span> 次
 				</span>
-				<img src="/xiang.png" alt="heart" class="heart-img" width="40" height="40" @click="onLinkUmiHandle" />
+				<div class="xiang" @click="onLinkUmiHandle()">
+					<img src="/xiang.png" alt="heart" class="heart-img" width="40" height="40" />
+					<Hamster class="hamster" :size="4" :dur="3" ></Hamster>
+				</div>
 				<span class="text">
 					本站访客数
 					<span id="busuanzi_value_site_uv" class="font-bold">--</span> 人次
@@ -19,6 +22,8 @@
 
 <script setup lang="ts" name="VisitorPanel"">
 import { inBrowser } from "vitepress";
+import Hamster from './hamster.vue'
+
 const onLinkUmiHandle = () => {
 	if (inBrowser) {
 		window.open(
@@ -65,5 +70,16 @@ const onLinkUmiHandle = () => {
 .text {
 	font-size: 0.875rem;
 	line-height: 1.25rem;
+}
+
+.xiang{
+	width: 40px;
+	height: 40px;
+	position: relative;
+}
+.xiang .hamster{
+	position: absolute;
+	top: 4px;
+	left: 42px;
 }
 </style>
