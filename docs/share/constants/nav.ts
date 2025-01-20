@@ -499,16 +499,22 @@ const TOOL_NAV: NavData = {
 	title: "工具",
 	items: [
 		{
-			icon: "https://caniuse.com/img/favicon-128.png",
-			title: "Can I use",
-			desc: "前端 API 兼容性查询",
-			link: "https://caniuse.com",
-		},
-		{
 			icon: "https://tinypng.com/images/apple-touch-icon.png",
 			title: "TinyPNG",
 			desc: "在线图片压缩工具",
 			link: "https://tinypng.com",
+		},
+		{
+			icon: "https://squoosh.app/c/icon-demo-logo-326ed9b6.png",
+			title: "squoosh",
+			desc: "在线图片压缩工具",
+			link: "https://squoosh.app/",
+		},
+		{
+			icon: "https://caniuse.com/img/favicon-128.png",
+			title: "Can I use",
+			desc: "前端 API 兼容性查询",
+			link: "https://caniuse.com",
 		},
 		{
 			icon: "https://devtool.tech/logo.svg",
