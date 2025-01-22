@@ -35,49 +35,49 @@ export default {
         busuanzi.fetch();
       };
 
-			const { loadOml2d } = await import("oh-my-live2d");
-      const oml2d = loadOml2d({
-        mobileDisplay: false,
-        models: LIVE2D_MODELS,
-        primaryColor: "#5e3af2",
-        sayHello: false,
-        menus: {
-          disable: false,
-          items: [
-            {
-              id: 'rest',
-              title: '关闭',
-              icon: 'icon-rest',
-              onClick() {
-                oml2d.stageSlideOut();
-                oml2d.setStatusBarClickEvent(() => {
-                  oml2d.stageSlideIn();
-                });
-              },
-            },
-            {
-              id: 'SwitchModel',
-              icon: 'icon-switch',
-              title: '切换模型',
-              onClick(): void {
-                oml2d.loadNextModel();
-              }
-            },
-          ],
-        },
-        tips: {
-          idleTips: {
-            wordTheDay: true,
-          },
-          mobileStyle: {
-            fontSize: "12px",
-            minHeight: "50px",
-          },
-          style: {
-            fontSize: "16px",
-          },
-        },
-      });
+			// const { loadOml2d } = await import("oh-my-live2d");
+      // const oml2d = loadOml2d({
+      //   mobileDisplay: false,
+      //   models: LIVE2D_MODELS,
+      //   primaryColor: "#5e3af2",
+      //   sayHello: false,
+      //   menus: {
+      //     disable: false,
+      //     items: [
+      //       {
+      //         id: 'rest',
+      //         title: '关闭',
+      //         icon: 'icon-rest',
+      //         onClick() {
+      //           oml2d.stageSlideOut();
+      //           oml2d.setStatusBarClickEvent(() => {
+      //             oml2d.stageSlideIn();
+      //           });
+      //         },
+      //       },
+      //       {
+      //         id: 'SwitchModel',
+      //         icon: 'icon-switch',
+      //         title: '切换模型',
+      //         onClick(): void {
+      //           oml2d.loadNextModel();
+      //         }
+      //       },
+      //     ],
+      //   },
+      //   tips: {
+      //     idleTips: {
+      //       wordTheDay: true,
+      //     },
+      //     mobileStyle: {
+      //       fontSize: "12px",
+      //       minHeight: "50px",
+      //     },
+      //     style: {
+      //       fontSize: "16px",
+      //     },
+      //   },
+      // });
 
 			(import.meta as any).env.PROD && utils.prohibitionOfDebugging();
     }
