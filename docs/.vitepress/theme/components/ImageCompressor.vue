@@ -397,9 +397,10 @@ const doCompressImage = async () => {
 			}
 		}, 500);
 	} catch (error) {
-		console.error("压缩失败:", error);
+		console.error("doCompressImage 压缩失败:", error);
 		ElMessage.error("压缩失败，请重试");
-		compressProgress.value = 0;
+		clearInterval(progressInterval);
+		compressProgress.value = 100;
 	} finally {
 		loading.value = false;
 	}
@@ -411,7 +412,7 @@ const handleCompressClick = async () => {
 	try {
 		await doCompressImage();
 	} catch (error) {
-		console.error("压缩失败:", error);
+		console.error("handleCompressClick 压缩失败:", error);
 	}
 };
 
