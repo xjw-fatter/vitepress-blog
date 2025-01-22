@@ -723,13 +723,6 @@ h1 {
 	background-color: transparent !important;
 }
 
-:deep(.el-input-number__decrease, .el-input-number__increase) {
-	&.is-disabled {
-		background-color: transparent !important;
-	}
-	background-color: transparent !important;
-}
-
 :deep(.el-slider__runway) {
 	margin: 16px 0;
 }
@@ -840,6 +833,14 @@ h1 {
 :deep(.el-input-number.is-controls-right .el-input-number__decrease) {
 	border-left: 1px solid #dcdfe6;
 }
+:deep(.el-input-number__increase),
+:deep(.el-input-number__decrease) {
+	background-color: transparent !important;
+
+}
+
+
+
 
 .image-info {
 	margin-top: 16px;
