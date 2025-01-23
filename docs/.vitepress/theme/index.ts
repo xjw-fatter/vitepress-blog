@@ -5,7 +5,7 @@ import { inBrowser, useRoute } from "vitepress";
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 import busuanzi from "busuanzi.pure.js";
-import myLayout from "./components/myLayout.vue";
+import MyLayout from "./components/MyLayout.vue";
 import { LIVE2D_MODELS } from '../../share/constants'; // 看板娘模版数据
 import mediumZoom from "medium-zoom";
 import { registerComponents } from './registerComponents';
@@ -20,7 +20,7 @@ import { utils } from '../../share/utils';
 export default {
   extends: DefaultTheme,
   Layout: () => {
-    return h(myLayout, null, {
+    return h(MyLayout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
     })
   },

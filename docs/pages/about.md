@@ -6,3 +6,6 @@ layout: page
 <About />
 
 <VisitorPanel />
+
+<IpView />
+

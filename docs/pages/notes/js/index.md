@@ -1,3 +1,3 @@
 ---
-title: JavaScript常用工具
+title: 工具
 ---

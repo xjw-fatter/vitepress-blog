@@ -1233,7 +1233,7 @@ export default {
 pnpm add canvas-confetti
 ```
 
-创建组件`docs/.vitepress/theme/components/confetti.vue`
+创建组件`docs/.vitepress/theme/components/Confetti.vue`
 ```vue
 <template>
   <div></div>
@@ -1256,13 +1256,13 @@ if (inBrowser) {
 
 在`docs/.vitepress/theme/index.ts`中注入该组件
 ```ts
-import confetti from "./components/confetti.vue"; // 纸屑效果
+import confetti from "./components/Confetti.vue"; // 纸屑效果
 
 export default {
   // ...
   async enhanceApp({ app, router, siteData }) {
       // ...
-      app.component("confetti", confetti);
+      app.component("Confetti", Confetti);
     }
   },
   // ...
@@ -1271,7 +1271,7 @@ export default {
 
 在需要使用的页面使用
 ``` vue
-<confetti />
+<Confetti />
 ```
 
 ### 5. 访客统计
@@ -1305,7 +1305,7 @@ export default defineConfig({
 });
 ```
 
-创建组件`docs/.vitepress/theme/components/visitorPanel.vue`
+创建组件`docs/.vitepress/theme/components/VisitorPanel.vue`
 ```vue
 <!-- .vitepress/theme/components/VisitorPanel.vue -->
 <template>
@@ -1388,14 +1388,14 @@ const onLinkUmiHandle = () => {
 
 在`docs/.vitepress/theme/index.ts`中注入该组件
 ```ts
-import visitorPanel from "./components/visitorPanel.vue"; // 访问统计
+import VisitorPanel from "./components/VisitorPanel.vue"; // 访问统计
 import busuanzi from "busuanzi.pure.js";
 
 export default {
   // ...
   async enhanceApp({ app, router, siteData }) {
       // ...
-      app.component("VisitorPanel", visitorPanel);
+      app.component("VisitorPanel", VisitorPanel);
 
       if (inBrowser) {
         router.onAfterRouteChanged = () => {
@@ -1411,7 +1411,7 @@ export default {
 
 在需要使用的页面使用
 ``` vue
-<visitorPanel />
+<VisitorPanel />
 ```
 
 ### 6. 评论
@@ -1427,10 +1427,10 @@ pnpm i -D @giscus/vue
 记住以下参数：
 ![vitepress blog 预览图 7](/images/vitepress7.png){data-zoomable}
 
-创建组件`docs/.vitepress/theme/components/myLayout.vue`，添加`giscus` 评论组件。
+创建组件`docs/.vitepress/theme/components/MyLayout.vue`，添加`giscus` 评论组件。
 
 ```vue
-<!--myLayout.vue-->
+<!--MyLayout.vue-->
 <template>
     <Layout>
         <template #doc-after>
@@ -1486,19 +1486,19 @@ watch(isDark, (dark) => {
 
 在`docs/.vitepress/theme/index.ts`中覆盖默认的布局，注入该组件
 ```ts
-import myLayout from "./components/myLayout.vue";
+import MyLayout from "./components/MyLayout.vue";
 
 export default {
   extends: DefaultTheme,
   Layout: () => {
-    return h(myLayout, null, {})
+    return h(MyLayout, null, {})
   },
 } satisfies Theme
 ```
 
 ### 7. 返回顶部
 
-创建组件`docs/.vitepress/theme/components/backTop.vue`
+创建组件`docs/.vitepress/theme/components/BackTop.vue`
 ```vue
 <template>
   <Transition name="fade">
@@ -1596,10 +1596,10 @@ svg {
 </style>
 ```
 
-添加到`myLayout`组件
+添加到`MyLayout`组件
 
 ```vue
-// myLayout.vue
+// MyLayout.vue
 <template>
     <Layout>
         <template #doc-footer-before>
@@ -1619,7 +1619,7 @@ import Giscus from "@giscus/vue";
 import DefaultTheme from "vitepress/theme";
 import { watch } from "vue";
 import { inBrowser, useData } from "vitepress";
-import BackTop from './backTop.vue'
+import BackTop from './BackTop.vue'
 
 const { isDark } = useData();
 

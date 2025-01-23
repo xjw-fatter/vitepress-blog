@@ -7,6 +7,7 @@ specifiers:
   '@vitejs/plugin-vue-jsx': ^4.1.1
   '@vitepress-code-preview/container': ^1.0.8
   '@vitepress-code-preview/plugin': ^1.0.6
+  bowser: ^2.11.0
   browser-image-compression: ^2.0.2
   busuanzi.pure.js: ^1.0.3
   canvas-confetti: ^1.9.3
@@ -31,6 +32,7 @@ dependencies:
   '@vitejs/plugin-vue-jsx': 4.1.1_vue@3.5.13
   '@vitepress-code-preview/container': 1.0.8_vue@3.5.13
   '@vitepress-code-preview/plugin': 1.0.6
+  bowser: 2.11.0
   browser-image-compression: 2.0.2
   busuanzi.pure.js: 1.0.3
   canvas-confetti: 1.9.3
@@ -2027,6 +2029,10 @@ packages:
 
   /birpc/0.2.19:
     resolution: {integrity: sha512-5WeXXAvTmitV1RqJFppT5QtUiz2p1mRSYU000Jkft5ZUCLJIk4uQriYNO50HknxKwM6jd8utNc66K1qGIwwWBQ==}
+
+  /bowser/2.11.0:
+    resolution: {integrity: sha512-AlcaJBi/pqqJBIQ8U9Mcpc9i8Aqxn88Skv5d+xBX006BY5u8N3mGLHa5Lgppa7L/HfwgwLgZ6NYs+Ag6uUmJRA==}
+    dev: false
 
   /brace-expansion/2.0.1:
     resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}

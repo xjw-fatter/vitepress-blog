@@ -4,7 +4,7 @@
 		:src="href"></iframe>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts" name="ModalIframe">
 import { defineProps } from 'vue';
 
 const props = defineProps({

@@ -22,7 +22,7 @@
 
 <script setup lang="ts" name="VisitorPanel"">
 import { inBrowser } from "vitepress";
-import Hamster from './hamster.vue'
+import Hamster from './Hamster.vue'
 
 const onLinkUmiHandle = () => {
 	if (inBrowser) {

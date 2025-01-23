@@ -58,6 +58,8 @@ document.getElementById('file').addEventListener('change', (e) => {
   });
 });
 ```
+### browser-image-compression
+[browser-image-compression](https://github.com/Donaldcwl/browser-image-compression#readme)支持多种格式的图片压缩的JavaScript 库
 
 ## 图片裁剪插件
 

@@ -23,6 +23,7 @@
     "@vitejs/plugin-vue-jsx": "^4.1.1",
     "@vitepress-code-preview/container": "^1.0.8",
     "@vitepress-code-preview/plugin": "^1.0.6",
+    "bowser": "^2.11.0",
     "browser-image-compression": "^2.0.2",
     "busuanzi.pure.js": "^1.0.3",
     "canvas-confetti": "^1.9.3",

@@ -364,13 +364,14 @@ const doCompressImage = async () => {
 		loading.value = true;
 		compressProgress.value = 0;
 
-		progressInterval = setInterval(() => {
-			if (compressProgress.value < 90) {
-				compressProgress.value = compressProgress.value + 1;
-			} else {
-				clearInterval(progressInterval);
-			}
-		}, 20);
+		// progressInterval = setInterval(() => {
+		// 	if (compressProgress.value < 90) {
+		// 		compressProgress.value = compressProgress.value + 1;
+		// 	} else {
+		// 		clearInterval(progressInterval);
+		// 	}
+		// }, 20);
+
 
 		let compressedBlob = await compressImageWithCanvas(
 			imageFile.value,
@@ -378,7 +379,7 @@ const doCompressImage = async () => {
 			options.maxWidth,
 			options.maxHeight
 		);
-
+		// virtualCompressProgress(); // 虚拟的进度条
 		const dataUrl = await readFileAsDataURL(compressedBlob);
 		const img = await loadImage(dataUrl);
 
@@ -524,6 +525,23 @@ const stopDragging = () => {
 	isDragging = false;
 	document.removeEventListener("mousemove", handleDragging);
 	document.removeEventListener("mouseup", stopDragging);
+};
+
+const virtualCompressProgress = async (file) => {
+    compressProgress.value = 0;
+    const interval = setInterval(() => {
+        if (compressProgress.value < 100) {
+            compressProgress.value += 10; // 每次增加10%
+        } else {
+            clearInterval(interval);
+        }
+    }, 200); // 每200毫秒更新一次进度
+
+    // 模拟压缩过程
+    await new Promise(resolve => setTimeout(resolve, 2000)); // 假设压缩过程需要2秒
+
+    clearInterval(interval); // 确保定时器在压缩完成后清除
+    compressProgress.value = 100; // 确保最终进度为100%
 };
 
 // const calculateCompressionRatio = () => {

@@ -37,6 +37,5 @@ features:
     linkText: 工具
 ---
 
-<confetti />
-
+<Confetti />
 <VisitorPanel />
