@@ -59,7 +59,7 @@ document.getElementById('file').addEventListener('change', (e) => {
 });
 ```
 ### browser-image-compression
-[browser-image-compression](https://github.com/Donaldcwl/browser-image-compression#readme)支持多种格式的图片压缩的JavaScript 库
+[browser-image-compression](https://github.com/Donaldcwl/browser-image-compression#readme)支持多种格式的图片压缩的JavaScript 库,[在线尝试](/pages/notes/js/ImageCompressor)
 
 ## 图片裁剪插件
 
@@ -283,4 +283,18 @@ gulp.task('default', gulp.series('deep-obfuscate-js-in-html'));
 
 :::
 
+## 动画
 
++ [lottie-web](https://www.npmjs.com/package/lottie-web)
+  + [Lottie](https://airbnb.io/lottie/#/) 是一个适用于 Android、iOS、Web 和 Windows 的库，它可以解析使用 Bodymovin 导出为 JSON 的 Adobe After Effects 动画，并在移动设备和 Web 上本地渲染它们！动画是用AE做好，然后用Bodymovin插件将动画转换成一个JSON文件，前端就可以使用[lottie-web](https://www.npmjs.com/package/lottie-web)将这个JSON文件的内容转换成图像渲染到浏览器页面上
+
+  动画资源：
+  + [lottiefiles](https://lottiefiles.com/)
+  + [iconfont](https://www.iconfont.cn/lotties/index?spm=a313x.activity_lists.i3.11.50913a81XAlei7)
+  + [creattie](https://creattie.com/)
+  + [lottielab](https://www.lottielab.com/)
++ [svga](https://www.npmjs.com/package/svga)一个 SVGA 在移动端 Web 上的播放器
++ [gsap](https://gsap.com/) 具有强大的功能，提供丰富动画效果和控制功能，如时间线、缓动函数等；性能卓越，渲染速度快，浏览器重绘少；社区支持广泛，有大量教程和资源。API复杂，学习曲线较陡，体积较大，可能增加页面加载时间。适用于如大型电商网站的促销活动页面、交互性强的游戏网站等
++ [animejs](https://animejs.com/) 轻量级，体积小巧，不占用过多资源；API 友好，易于上手，适用于个人博客、简单的企业宣传网站等
++ [velocityjs](http://velocityjs.org/) 渲染速度快，性能好，适合处理大量动画；API 简洁明了，易于使用；浏览器兼容性好，支持多种浏览器和设备。依赖jQuery，增加了项目依赖性，且社区规模较小，资源相对较少。
++ [mojs](https://mojs.github.io/) 能创建高度定制化的动画效果，提供强大的形状系统、自定义数值和时间系统，还有多种内置动画效果，如粒子系统、生长动画等。API复杂，学习成本较高。

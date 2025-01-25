@@ -1,23 +1,11 @@
 <template>
 	<div class="container">
-		<div class="background-pattern"></div>
 		<div class="content">
 			<h1>图片压缩</h1>
 
-			<el-card
-				class="upload-area"
-				v-if="!imageFile"
-				:body-style="{ padding: 0 }"
-			>
-				<el-upload
-					class="upload-drop"
-					drag
-					:auto-upload="false"
-					:show-file-list="false"
-					@change="handleFileChange"
-					accept="image/*"
-					:disabled="loading"
-				>
+			<el-card class="upload-area" v-if="!imageFile" :body-style="{ padding: 0 }">
+				<el-upload class="upload-drop" drag :auto-upload="false" :show-file-list="false" @change="handleFileChange"
+					accept="image/*" :disabled="loading">
 					<template #default>
 						<div class="upload-content">
 							<el-icon class="el-icon--upload"><upload-filled /></el-icon>
@@ -28,177 +16,113 @@
 				</el-upload>
 			</el-card>
 
-			<div v-else>
-				<div class="preview-container">
-					<div class="preview-box">
-						<h3>原图</h3>
-						<div class="image-container">
-							<img
-								:src="originalPreview"
-								alt="Original"
-								class="preview-image"
-							/>
-						</div>
-						<div class="image-info">
-							<div class="image-info-item">
-								<i class="el-icon-document"></i>
-								<span>{{ formatFileSize(originalSize) }}</span>
-							</div>
-							<div class="image-info-item">
-								<i class="el-icon-picture"></i>
-								<span
-									>{{ originalDimensions.width }} x
-									{{ originalDimensions.height }}</span
-								>
-							</div>
-						</div>
+			<div v-else class="preview-container">
+				<div class="preview-box">
+					<h3>原图</h3>
+					<div class="image-container">
+						<img :src="originalPreview" alt="Original" class="preview-image" />
 					</div>
-
-					<div class="preview-box">
-						<h3>压缩后</h3>
-						<div class="image-container">
-							<div
-								class="comparison-slider"
-								v-if="!loading && compressProgress >= 100"
-							>
-								<img
-									:src="originalPreview"
-									alt="Compressed"
-									class="comparison-image"
-								/>
-								<div
-									class="comparison-overlay"
-									:style="{ '--position': comparisonValue + '%' }"
-								>
-									<img
-										:src="compressedPreview"
-										alt="Original"
-										class="comparison-image"
-									/>
-								</div>
-								<div
-									class="slider-handle"
-									:style="{ left: comparisonValue + '%' }"
-									@mousedown="startDragging"
-								>
-									<div class="handle-line"></div>
-									<div class="handle-arrows">
-										<span>← 原图</span>
-										<span>压缩 →</span>
-									</div>
-								</div>
-								<div class="comparison-labels">
-									<span class="label-left">原图</span>
-									<span class="label-right">压缩</span>
-								</div>
-							</div>
-							<template v-else>
-								<div class="loading-overlay">
-									<el-progress
-										class="progress-circle"
-										type="circle"
-										color="#9c27b0"
-										:percentage="compressProgress"
-										:stroke-width="6"
-									>
-										<template #default>
-											<div class="progress-info">
-												<span>压缩中</span>
-												<span>{{ compressProgress }}%</span>
-											</div>
-										</template>
-									</el-progress>
-								</div>
-							</template>
+					<div class="image-info">
+						<div class="image-info-item">
+							<i class="el-icon-document"></i>
+							<span>{{ formatFileSize(originalSize) }}</span>
 						</div>
-						<div class="image-info">
-							<div class="image-info-item">
-								<i class="el-icon-document"></i>
-								<span>{{ formatFileSize(compressedSize) }}</span>
-								<span
-									v-if="compressedSize && originalSize"
-									class="compression-ratio"
-									:class="{ 'good-ratio': compressedSize / originalSize < 0.6 }"
-								>
-									({{ calculateCompressionRatio() }})
-								</span>
-							</div>
-							<div class="image-info-item">
-								<i class="el-icon-picture"></i>
-								<span
-									>{{ compressedDimensions.width }} x
-									{{ compressedDimensions.height }}</span
-								>
-							</div>
+						<div class="image-info-item">
+							<i class="el-icon-picture"></i>
+							<span>{{ originalDimensions.width }} x
+								{{ originalDimensions.height }}</span>
 						</div>
 					</div>
 				</div>
 
-				<div class="controls">
-					<el-form :model="options" label-width="120px">
-						<el-form-item label="压缩质量">
-							<div class="quality-label">
-								<span class="quality-value"
-									>{{ (options.quality * 100).toFixed(0) }}%</span
-								>
+				<div class="preview-box">
+					<h3>压缩后</h3>
+					<div class="image-container">
+						<div class="comparison-slider" v-if="!loading && compressProgress >= 100">
+							<img :src="originalPreview" alt="Compressed" class="comparison-image" />
+							<div class="comparison-overlay" :style="{ '--position': comparisonValue + '%' }">
+								<img :src="compressedPreview" alt="Original" class="comparison-image" />
 							</div>
-							<el-slider
-								v-model="options.quality"
-								:min="0.1"
-								:max="1"
-								:step="0.05"
-								:marks="{
-									0.1: '低质量',
-									0.5: '平衡',
-									1: '高质量',
-								}"
-								:disabled="loading"
-							/>
-						</el-form-item>
-						<el-form-item label="输出尺寸">
-							<div class="size-inputs">
-								<el-input-number
-									v-model="options.maxWidth"
-									:min="100"
-									:max="originalDimensions.width"
-									:step="100"
-									:disabled="loading"
-									placeholder="宽度"
-								/>
-								<span>×</span>
-								<el-input-number
-									v-model="options.maxHeight"
-									:min="100"
-									:max="originalDimensions.height"
-									:step="100"
-									:disabled="loading"
-									placeholder="高度"
-								/>
-								<el-checkbox v-model="options.maintainRatio" :disabled="loading"
-									>保持比例</el-checkbox
-								>
+							<div class="slider-handle" :style="{ left: comparisonValue + '%' }" @mousedown="startDragging">
+								<div class="handle-line"></div>
+								<div class="handle-arrows">
+									<span>← 原图</span>
+									<span>压缩 →</span>
+								</div>
 							</div>
-						</el-form-item>
-					</el-form>
-
-					<div class="buttons">
-						<el-button
-							type="primary"
-							@click="handleCompressClick"
-							:loading="loading"
-							:disabled="loading"
-							>重新压缩</el-button
-						>
-						<el-button
-							type="success"
-							@click="downloadImage"
-							:disabled="loading || !compressedPreview"
-							>下载图片</el-button
-						>
-							<el-button type="danger" @click="resetImage" :disabled="loading"
-							>重新选择</el-button
-						>
+							<div class="comparison-labels">
+								<span class="label-left">原图</span>
+								<span class="label-right">压缩</span>
+							</div>
+						</div>
+						<template v-else>
+							<div class="loading-overlay">
+								<el-progress class="progress-circle" type="circle" color="#9c27b0" :percentage="compressProgress"
+									:stroke-width="6">
+									<template #default>
+										<div class="progress-info">
+											<span>压缩中</span>
+											<span>{{ compressProgress }}%</span>
+										</div>
+									</template>
+								</el-progress>
+							</div>
+						</template>
 					</div>
+					<div class="image-info">
+						<div class="image-info-item">
+							<i class="el-icon-document"></i>
+							<span>{{ formatFileSize(compressedSize) }}</span>
+							<span v-if="compressedSize && originalSize" class="compression-ratio"
+								:class="{ 'good-ratio': compressedSize / originalSize < 0.6 }">
+								({{ calculateCompressionRatio() }})
+							</span>
+						</div>
+						<div class="image-info-item">
+							<i class="el-icon-picture"></i>
+							<span>{{ compressedDimensions.width }} x
+								{{ compressedDimensions.height }}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="controls">
+				<el-form :model="options" label-width="120px">
+					<el-form-item label="示例">
+							<el-radio-group v-model="options.type">
+							<el-radio value="canvas">默认</el-radio>
+							<el-radio value="browser-image-compression">browser-image-compression</el-radio>
+							<el-radio value="compressorjs">compressorjs</el-radio>
+						</el-radio-group>
+					<div style="font-size: 12px;color: #b39ddb;">均为Canvas API 对图像进行绘制和操作</div>
+					</el-form-item>
+					<el-form-item label="压缩质量">
+						<div class="quality-label">
+							<span class="quality-value">{{ (options.quality * 100).toFixed(0) }}%</span>
+						</div>
+						<el-slider v-model="options.quality" :min="0.1" :max="1" :step="0.05" :marks="{
+							0.1: '低质量',
+							0.5: '平衡',
+							1: '高质量',
+						}" :disabled="loading" />
+					</el-form-item>
+					<el-form-item label="输出尺寸" v-if="imageFile">
+						<div class="size-inputs">
+							<el-input-number v-model="options.maxWidth" :min="100" :max="originalDimensions.width" :step="100"
+								:disabled="loading" placeholder="宽度" />
+							<span>×</span>
+							<el-input-number v-model="options.maxHeight" :min="100" :max="originalDimensions.height" :step="100"
+								:disabled="loading" placeholder="高度" />
+							<el-checkbox v-model="options.maintainRatio" :disabled="loading">保持比例</el-checkbox>
+						</div>
+					</el-form-item>
+				</el-form>
+
+				<div class="buttons" v-if="imageFile">
+					<el-button type="primary" @click="handleCompressClick" :loading="loading" :disabled="loading">重新压缩</el-button>
+					<el-button type="success" @click="downloadImage" :disabled="loading || !compressedPreview">下载图片</el-button>
+					<el-button type="danger" @click="resetImage" :disabled="loading">重新选择</el-button>
 				</div>
 			</div>
 		</div>
@@ -208,6 +132,8 @@
 <script setup>
 import { ref, reactive, onUnmounted, watch } from "vue";
 import { UploadFilled } from "@element-plus/icons-vue";
+import imageCompression from 'browser-image-compression';
+import Compressor from 'compressorjs';
 
 const loading = ref(false);
 const imageFile = ref(null);
@@ -222,6 +148,7 @@ const comparisonValue = ref(50);
 let isDragging = false;
 
 const options = reactive({
+	type: 'canvas',
 	quality: 0.8,
 	maxWidth: 1920,
 	maxHeight: 1080,
@@ -320,6 +247,22 @@ const compressImageWithCanvas = async (
 	});
 };
 
+const compressImageWithCompressorjs = () => {
+	return new Promise((resolve, reject) => {
+		new Compressor(imageFile.value, {
+			quality: options.quality,
+			maxWidth: options.maxWidth,
+			maxHeight: options.maxHeight,
+			success(result) {
+				resolve(result);
+			},
+			error(err) {
+				reject(err)
+			},
+		});
+	})
+}
+
 const handleFileChange = async (file) => {
 	if (loading.value) return;
 
@@ -373,12 +316,34 @@ const doCompressImage = async () => {
 		// }, 20);
 
 
-		let compressedBlob = await compressImageWithCanvas(
-			imageFile.value,
-			options.quality,
-			options.maxWidth,
-			options.maxHeight
-		);
+		let compressedBlob = null;
+
+		switch (options.type) {
+			case "canvas":
+				compressedBlob = await compressImageWithCanvas(
+					imageFile.value,
+					options.quality,
+					options.maxWidth,
+					options.maxHeight
+				);
+				// console.log('canvas',compressedBlob)
+				break;
+			case "browser-image-compression":
+				compressedBlob = await imageCompression(imageFile.value, {
+					initialQuality: options.quality,
+					maxWidthOrHeight: options.maxWidth,
+					useWebWorker: true,
+				});
+				// console.log('browser-image-compression',compressedBlob)
+				break;
+			case "compressorjs":
+				compressedBlob = await compressImageWithCompressorjs();
+				// console.log('compressedBlob',compressedBlob)
+				break;
+			default:
+				break;
+		}
+
 		// virtualCompressProgress(); // 虚拟的进度条
 		const dataUrl = await readFileAsDataURL(compressedBlob);
 		const img = await loadImage(dataUrl);
@@ -528,26 +493,21 @@ const stopDragging = () => {
 };
 
 const virtualCompressProgress = async (file) => {
-    compressProgress.value = 0;
-    const interval = setInterval(() => {
-        if (compressProgress.value < 100) {
-            compressProgress.value += 10; // 每次增加10%
-        } else {
-            clearInterval(interval);
-        }
-    }, 200); // 每200毫秒更新一次进度
+	compressProgress.value = 0;
+	const interval = setInterval(() => {
+		if (compressProgress.value < 100) {
+			compressProgress.value += 10; // 每次增加10%
+		} else {
+			clearInterval(interval);
+		}
+	}, 200); // 每200毫秒更新一次进度
 
-    // 模拟压缩过程
-    await new Promise(resolve => setTimeout(resolve, 2000)); // 假设压缩过程需要2秒
+	// 模拟压缩过程
+	await new Promise(resolve => setTimeout(resolve, 2000)); // 假设压缩过程需要2秒
 
-    clearInterval(interval); // 确保定时器在压缩完成后清除
-    compressProgress.value = 100; // 确保最终进度为100%
+	clearInterval(interval); // 确保定时器在压缩完成后清除
+	compressProgress.value = 100; // 确保最终进度为100%
 };
-
-// const calculateCompressionRatio = () => {
-//   const ratio = (compressedSize.value / originalSize.value * 100).toFixed(1)
-//   return `节省 ${(100 - ratio)}%`
-// }
 
 const calculateCompressionRatio = () => {
 	const ratio = (compressedSize.value / originalSize.value) * 100;
@@ -562,16 +522,6 @@ const calculateCompressionRatio = () => {
 	min-height: 100vh;
 	position: relative;
 	overflow: hidden;
-}
-
-.background-pattern {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	pointer-events: none;
-	z-index: 0;
 }
 
 .content {
@@ -852,13 +802,26 @@ h1 {
 :deep(.el-input-number.is-controls-right .el-input-number__decrease) {
 	border-left: 1px solid #dcdfe6;
 }
+
 :deep(.el-input-number__increase),
 :deep(.el-input-number__decrease) {
 	background-color: transparent !important;
 
 }
 
+:deep(.el-radio-group) {
+	.el-radio {
+		--el-radio-input-border-color-hover: #b39ddb;
+	}
 
+	.el-radio__input.is-checked+.el-radio__label {
+		color: #7e57c2;
+	}
+	.el-radio__input.is-checked .el-radio__inner {
+    background: #b39ddb;
+    border-color: #b39ddb;
+}
+}
 
 
 .image-info {

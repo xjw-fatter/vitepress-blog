@@ -15,29 +15,22 @@ const userIpAddress = ref("");
 const userLocation = ref("");
 const operatingSystem = ref("");
 const browserInfo = ref("");
-
+// https://www.ip.cn/api/index?ip&type=0
+// https://2024.ipchaxun.com/
+// https://searchplugin.csdn.net/api/v1/ip/get
+// https://ip.useragentinfo.com/json
+// https://ipinfo.io/json
 // 获取IP地址
 const fetchUserIpAddress = async () => {
   try {
-    const response = await fetch("https://ipinfo.io/json");
+    const response = await fetch("https://ip.useragentinfo.com/json");
     const data = await response.json();
     userIpAddress.value = data.ip;
-    await fetchUserLocation(data);
+		userLocation.value = `${data.country}.${data.province}.${data.city} ${data.isp}`;
   } catch (error) {
     console.error("获取IP地址失败:", error);
   }
 };
-
-// 获取地理位置
-const fetchUserLocation = async (data) => {
-  try {
-
-    userLocation.value = `${data.city}.${data.region}.${data.country}`;
-  } catch (error) {
-    console.error("获取地理位置失败:", error);
-  }
-};
-
 // 获取操作系统信息
 const fetchOperatingSystem = () => {
   const parser = Bowser.getParser(window.navigator.userAgent);
@@ -62,12 +55,17 @@ onMounted(() => {
 .ip-view {
 	display: flex;
 	width: fit-content;
-	margin: 24px auto;
+	padding: 0 8px;
+	margin: 8px auto 0;
 }
 
 .ip-view p {
   font-size: 12px;
+	line-height: 16px;
   color: #666;
 	margin-right: 4px;
+}
+.ip-view p:last-child{
+	margin-right: 0;
 }
 </style>

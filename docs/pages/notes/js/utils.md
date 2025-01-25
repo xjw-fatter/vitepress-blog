@@ -1,8 +1,8 @@
 ---
-title: 工具函数
+title: 代码片段
 ---
 
-# 工具函数
+# 代码片段
 
 ## 是否在某环境(微信/支付宝...)
 
@@ -572,3 +572,29 @@ convertKeysBySeparator(obj, separator = '_') {
 ```
 
 
+## [await-to-js](https://github.com/scopsy/await-to-js.git)
+
+```ts
+/**
+ * @param { Promise } promise
+ * @param { Object= } errorExt - Additional Information you can pass to the err object
+ * @return { Promise }
+ */
+export function to<T, U = Error> (
+  promise: Promise<T>,
+  errorExt?: object
+): Promise<[U, undefined] | [null, T]> {
+  return promise
+    .then<[null, T]>((data: T) => [null, data])
+    .catch<[U, undefined]>((err: U) => {
+      if (errorExt) {
+        const parsedError = Object.assign({}, err, errorExt);
+        return [parsedError, undefined];
+      }
+
+      return [err, undefined];
+    });
+}
+
+export default to;
+```

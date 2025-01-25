@@ -27,6 +27,7 @@
     "browser-image-compression": "^2.0.2",
     "busuanzi.pure.js": "^1.0.3",
     "canvas-confetti": "^1.9.3",
+    "compressorjs": "^1.2.1",
     "element-plus": "2.9.3",
     "oh-my-live2d": "^0.19.3",
     "vitepress": "1.4.1",

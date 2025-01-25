@@ -11,6 +11,7 @@ title: 开源项目
 - [BigDataView](https://github.com/iGaoWei/BigDataView) - 100+套大数据可视化模板,[Gitee 地址](https://gitee.com/iGaoWei/big-data-view)
 - [Cool Admin(Vue3)](https://vue.cool-admin.com/) - 后台管理系统开发框架
 - [GitHub520](https://github.com/521xueweihan/GitHub520) - 通过修改本地 hosts 文件，试图解决： GitHub 访问速度慢的问题,GitHub 项目中的图片显示不出的问题
+
 ```
 下面的地址无需访问 GitHub 即可获取到最新的 hosts 内容：
     文件：https://raw.hellogithub.com/hosts
@@ -31,7 +32,7 @@ hosts 文件在每个系统的位置不一，详情如下：
     Linux 命令：sudo nscd restart，如报错则须安装：sudo apt install nscd 或 sudo /etc/init.d/nscd restart
     Mac 命令：sudo killall -HUP mDNSResponder
 Tips： 上述方法无效可以尝试重启机器。
-
 ```
 
 - [12306](https://gitee.com/nageoffer/12306) - 让学习者可以快速掌握分布式系统设计的技巧，尤其适合对高并发、分布式感兴趣的同学学习。
+- [Pake](https://github.com/tw93/Pake/blob/main/README_CN.md) - 轻松构建轻量级多端桌面应用 
