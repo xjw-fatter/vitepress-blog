@@ -67,7 +67,6 @@ document.getElementById('file').addEventListener('change', (e) => {
 
 [vue-cropper](https://www.npmjs.com/package/vue-cropper)一个优雅的图片裁剪插件
 
-
 ## 富文本库
 
 ### textbus

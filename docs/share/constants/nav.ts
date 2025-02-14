@@ -1,49 +1,31 @@
 import { NavData } from "../types/index.type";
 // AI FILM GAME VUE ANGULAR JAVASCRIPT CSS TOOL MINIPROGRAM NODE CHART BUILD SITE_GRNERATE ICONS LEARN HUB OTHER
 const AI_NAV: NavData = {
-	title: "AI助手",
+	title: "AI",
 	items: [
 		{
-			icon: "https://openai.com/favicon.ico",
-			title: "ChatGPT | OpenAI",
-			link: "https://openai.com/",
-			desc: "ChatGPT is a sibling model to InstructGPT⁠, which is trained to follow an instruction in a prompt and provide a detailed response."
+			icon: "https://www.deepseek.com/favicon.ico",
+			title: "deepseek",
+			link: "https://www.deepseek.com/",
+			desc: "探索未至之境"
 		},
 		{
-			icon: "https://www.notion.so/images/logo-ios.png",
-			title: "Notion AI（笔记）",
-			link: "https://www.notion.so",
-			desc: "A new tool that blends your everyday work apps into one. It's the all-in-one workspace for you and your team."
+			icon: "https://qbtool.static.qq.com/ima/assets/official-website/favicon.ico",
+			title: "ima.copilot-腾讯智能工作台",
+			link: "https://wiki.ima.qq.com/",
+			desc: "以知识库为核心的AI智能工作台"
 		},
 		{
-			icon: "https://www.midjourney.com/apple-touch-icon.png",
-			title: "Midjourney（绘画）",
-			link: "https://www.midjourney.com",
-			desc: "An independent research lab exploring new mediums of thought and expanding the imaginative powers of the human species."
+			icon: "https://img.alicdn.com/imgextra/i1/O1CN01AKUdEM1qP6BQVaYhT_!!6000000005487-2-tps-512-512.png",
+			title: "通义千问",
+			link: "https://tongyi.aliyun.com/qianwen/",
+			desc: "AI PPT,AI搜索,AI写作,大语言模型"
 		},
 		{
-			icon: "https://global-uploads.webflow.com/59deb588800ae30001ec19c9/5d4891e0e260e3c1bc37b100_beautiful%20ai%20favicon%20%20blue%20square.png",
-			title: "Beautiful.ai（PPT）",
-			link: "https://www.beautiful.ai",
-			desc: "Beautiful.ai is the best AI-powered presentation software for teams. Stay on brand, level up and automate presentation design, and collaborate from anywhere."
-		},
-		{
-			icon: "/icons/ha.png",
-			title: "欧亿Ai",
-			link: "https://ai.rcouyi.com/home",
-			desc: ""
-		},
-		{
-			icon: "https://v0.dev/assets/icon-dark-32x32.png",
-			title: "v0",
-			link: "https://v0.dev/chat",
-			desc: "Chat with v0. Generate UI with simple text prompts. Copy, paste, ship."
-		},
-		{
-			icon: "https://feizhuke.com/zhufav.png",
-			title: "非猪",
-			link: "https://feizhuke.com/",
-			desc: "ai导航,让你秒变飞猪ai工具集合网站指南,汇聚国内外知名aigc软件服务"
+			icon: "https://chatglm.cn/img/icons/favicon-32x32.png",
+			title: "智谱清言",
+			link: "https://chatglm.cn/main/guest?lang=zh",
+			desc: "中国版对话语言模型，与GLM大模型进行对话。"
 		},
 		{
 			icon: "https://statics.moonshot.cn/kimi-chat/favicon.ico",
@@ -80,6 +62,48 @@ const AI_NAV: NavData = {
 			title: "豆包",
 			link: "https://www.doubao.com/chat/",
 			desc: "豆包 - 字节跳动旗下 AI 智能助手"
+		},
+		{
+			icon: "https://openai.com/favicon.ico",
+			title: "ChatGPT | OpenAI",
+			link: "https://openai.com/",
+			desc: "ChatGPT is a sibling model to InstructGPT⁠, which is trained to follow an instruction in a prompt and provide a detailed response."
+		},
+		{
+			icon: "https://www.notion.so/images/logo-ios.png",
+			title: "Notion AI（笔记）",
+			link: "https://www.notion.so",
+			desc: "A new tool that blends your everyday work apps into one. It's the all-in-one workspace for you and your team."
+		},
+		{
+			icon: "https://www.midjourney.com/apple-touch-icon.png",
+			title: "Midjourney（绘画）",
+			link: "https://www.midjourney.com",
+			desc: "An independent research lab exploring new mediums of thought and expanding the imaginative powers of the human species."
+		},
+		{
+			icon: "https://global-uploads.webflow.com/59deb588800ae30001ec19c9/5d4891e0e260e3c1bc37b100_beautiful%20ai%20favicon%20%20blue%20square.png",
+			title: "Beautiful.ai（PPT）",
+			link: "https://www.beautiful.ai",
+			desc: "Beautiful.ai is the best AI-powered presentation software for teams. Stay on brand, level up and automate presentation design, and collaborate from anywhere."
+		},
+		{
+			icon: "https://v0.dev/assets/icon-dark-32x32.png",
+			title: "v0",
+			link: "https://v0.dev/chat",
+			desc: "Chat with v0. Generate UI with simple text prompts. Copy, paste, ship."
+		},
+		{
+			icon: "https://ai.rcouyi.com/apple-touch.ico",
+			title: "欧亿AI工具",
+			link: "https://ai.rcouyi.com/home",
+			desc: ""
+		},
+		{
+			icon: "https://feizhuke.com/zhufav.png",
+			title: "非猪导航",
+			link: "https://feizhuke.com/",
+			desc: "ai导航,让你秒变飞猪ai工具集合网站指南,汇聚国内外知名aigc软件服务"
 		},
 	],
 };
