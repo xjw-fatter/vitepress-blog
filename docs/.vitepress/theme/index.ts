@@ -3,19 +3,16 @@ import { h, nextTick, onMounted, watch } from 'vue'
 import type { Theme } from "vitepress";
 import { inBrowser, useRoute } from "vitepress";
 import DefaultTheme from 'vitepress/theme'
-import './style.css'
 import busuanzi from "busuanzi.pure.js";
 import MyLayout from "./components/MyLayout.vue";
-import { LIVE2D_MODELS } from '../../share/constants'; // 看板娘模版数据
 import mediumZoom from "medium-zoom";
 import { registerComponents } from './registerComponents';
-
-import { Sandbox } from 'vitepress-plugin-sandpack';
-import 'vitepress-plugin-sandpack/dist/style.css';
-
-import DemoPreview, { useComponents } from '@vitepress-code-preview/container'
-import '@vitepress-code-preview/container/dist/style.css'
+import { LIVE2D_MODELS } from '../../share/constants'; // 看板娘模版数据
 import { applyGrayscale, utils } from '../../share/utils';
+
+import './style.css'
+import 'vitepress-plugin-sandpack/dist/style.css';
+import '@vitepress-code-preview/container/dist/style.css'
 
 export default {
   extends: DefaultTheme,
@@ -27,8 +24,7 @@ export default {
   async enhanceApp({ app, router, siteData }) {
     // ...
 		registerComponents(app);
-		app.component('Sandbox', Sandbox);
-		app.component('DemoPreview', DemoPreview);
+
 
     if (inBrowser) {
       router.onAfterRouteChanged = () => {
@@ -85,7 +81,8 @@ export default {
   },
   setup() {
     const route = useRoute();
-    const initZoom = () => {
+		// cSpell:disable
+		const initZoom = () => {
       mediumZoom('[data-zoomable]', { background: 'var(--vp-c-bg)' }); // 默认
       // mediumZoom(".main img", { background: "var(--vp-c-bg)" }); // 不显式添加{data-zoomable}的情况下为所有图像启用此功能
     };

@@ -1109,13 +1109,11 @@ export default {
 ```
 ### 3. 看板娘
 
-[oh-my-live2d](https://github.com/oh-my-live2d/oh-my-live2d) Live2D For Web 组件, 快速为您的个人网站加入Live2D看板娘,去[官网查看效果](https://www.oml2d.com/)
+[oh-my-live2d](https://github.com/oh-my-live2d/oh-my-live2d) Live2D For Web 组件, 快速为您的个人网站加入Live2D看板娘,去[官方文档查看效果](https://oml2d.hacxy.cn/)
 
 ```sh [pnpm]
-pnmpm i  oh-my-live2d
+pnpm i  oh-my-live2d
 ```
-
-[模型资源](https://www.oml2d.com/guide/models.html)
 
 ```ts
 // live2d.ts

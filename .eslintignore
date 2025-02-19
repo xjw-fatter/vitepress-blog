@@ -1,0 +1,13 @@
+# 忽略工具函数目录
+docs/share/utils/*
+docs/public/js/*
+
+# 忽略构建目录
+dist
+.vitepress/dist
+.vitepress/cache
+
+# 忽略第三方库
+node_modules
+blog
+*.cjs

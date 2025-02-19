@@ -1,0 +1,34 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "vitepress",
+    "unplugin",
+    "vite",
+    "busuanzi",
+    "giscus",
+    "umami",
+    "xiang",
+    "pnpm",
+    "vitejs",
+    "mermaid",
+    "sandpack",
+    "bowser",
+    "terser",
+    "compressorjs",
+    "XiYiAngXiang's",
+    "EasyTyper",
+		"Typer",
+    "Uiverse"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    "dist/**",
+    "pnpm-lock.yaml",
+    "docs/**/*.md",
+    "*.log",
+    "*.lock",
+    "*.json",
+		"blog/**"
+  ]
+}

@@ -10,6 +10,7 @@ import { viteDemoPreviewPlugin } from '@vitepress-code-preview/plugin'
 import { fileURLToPath, URL } from 'node:url'
 import { demoPreviewPlugin } from '@vitepress-code-preview/plugin'
 // import { withMermaid } from "vitepress-plugin-mermaid";
+
 export default defineConfig({
 	title: "嘻咦昂向",
 	description: "XiYiAngXiang's Blog",
@@ -62,7 +63,6 @@ export default defineConfig({
 			prev: "上一页",
 			next: "下一页",
 		},
-
 		// 主题
 		darkModeSwitchLabel: "深浅模式",
 		// 返回顶部label
@@ -79,6 +79,7 @@ export default defineConfig({
 				timeStyle: "medium",
 			},
 		},
+		// 导航配置
 		nav,
 		sidebar,
 		// 社交链接
@@ -105,7 +106,14 @@ export default defineConfig({
 			sourcemap: false, // 构建后是否生成 source map 文件
 			minify: 'terser', // terser 构建后文件体积更小
 			assetsInlineLimit: 4096,
-			chunkSizeWarningLimit: 1000, //chunk 大小警告的限制
+			chunkSizeWarningLimit: 2000, // 提高 chunk 大小警告的限制
+			rollupOptions: {
+				output: {
+					manualChunks: {
+						'element-plus': ['element-plus']
+					}
+				}
+			}
 		},
 		server: {
 			host: "0.0.0.0",

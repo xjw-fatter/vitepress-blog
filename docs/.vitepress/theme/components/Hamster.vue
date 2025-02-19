@@ -45,7 +45,7 @@ defineProps({
 });
 </script>
 <style scoped lang="scss">
-/* From Uiverse.io by Nawsome */
+/* From Uiverse.io */
 .wheel-and-hamster {
 	--dur: 1s;
 	position: relative;

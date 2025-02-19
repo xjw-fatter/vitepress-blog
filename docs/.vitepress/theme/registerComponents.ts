@@ -6,6 +6,9 @@ import About from './components/About.vue'
 import ModalIframe from './components/ModalIframe.vue'
 import ImageCompressor from './components/ImageCompressor.vue'
 import IpView from './components/IpView.vue'
+import { Sandbox } from 'vitepress-plugin-sandpack';
+import DemoPreview, { useComponents } from '@vitepress-code-preview/container'
+
 export function registerComponents(app: App) {
 	app.component("Confetti", Confetti);
 	app.component("VisitorPanel", VisitorPanel);
@@ -14,4 +17,6 @@ export function registerComponents(app: App) {
 	app.component("ModalIframe",ModalIframe);
 	app.component("ImageCompressor",ImageCompressor);
 	app.component("IpView",IpView);
+	app.component('Sandbox', Sandbox);
+	app.component('DemoPreview', DemoPreview);
 }

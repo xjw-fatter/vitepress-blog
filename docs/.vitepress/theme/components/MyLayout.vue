@@ -55,6 +55,7 @@ const { isDark } = useData();
 
 const { Layout } = DefaultTheme;
 
+// cSpell:disable
 const giscusOptions: any = {
 	repo: "xjw-fatter/vitepress-blog",
 	repoId: "R_kgDONFEywA",

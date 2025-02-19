@@ -94,6 +94,7 @@ export const nav: DefaultTheme.Config["nav"] = [
 ];
 
 // algolia配置
+// cSpell:disable
 export const algolia: DefaultTheme.AlgoliaSearchOptions = {
 	appId: "FJYL7LQS95",
 	apiKey: "e196a8af5b5470b0ae3c755c401293b1",
