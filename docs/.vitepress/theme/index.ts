@@ -13,6 +13,7 @@ import { applyGrayscale, utils } from '../../share/utils';
 import './style.css'
 import 'vitepress-plugin-sandpack/dist/style.css';
 import '@vitepress-code-preview/container/dist/style.css'
+import 'uno.css'
 
 export default {
   extends: DefaultTheme,

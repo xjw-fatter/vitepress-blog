@@ -19,7 +19,8 @@
     "XiYiAngXiang's",
     "EasyTyper",
 		"Typer",
-    "Uiverse"
+    "Uiverse",
+		"unocss"
   ],
   "ignorePaths": [
     "node_modules/**",
