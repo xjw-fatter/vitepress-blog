@@ -15,7 +15,7 @@ import 'vitepress-plugin-sandpack/dist/style.css';
 
 import DemoPreview, { useComponents } from '@vitepress-code-preview/container'
 import '@vitepress-code-preview/container/dist/style.css'
-import { utils } from '../../share/utils';
+import { applyGrayscale, utils } from '../../share/utils';
 
 export default {
   extends: DefaultTheme,
@@ -35,6 +35,7 @@ export default {
         busuanzi.fetch();
       };
 
+			applyGrayscale();
 			// const { loadOml2d } = await import("oh-my-live2d");
       // const oml2d = loadOml2d({
       //   mobileDisplay: false,
