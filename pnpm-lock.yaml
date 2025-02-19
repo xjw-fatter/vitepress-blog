@@ -65,7 +65,6 @@ devDependencies:
   '@unocss/preset-attributify': 66.0.0
   '@unocss/preset-icons': 66.0.0
   '@unocss/preset-uno': 66.0.0
-  '@unocss/preset-wind': 66.0.0
   '@unocss/preset-wind3': 66.0.0
   '@vue/eslint-config-typescript': 14.4.0_kmadgudk7nqdec4tm2m5wbbvbi
   chalk: 4.1.0
