@@ -27,7 +27,7 @@ features:
     icon:
       src: /icons/ha.png
     details: 记录一些日常
-    link: /pages/notes/js/library
+    link: /pages/notes/tools/imageCompressor
     linkText: 笔记
   - title: 工具
     icon:

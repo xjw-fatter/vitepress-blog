@@ -67,7 +67,7 @@ const sideBarData: VitePressSidebarOptions[] = [
 		documentRootPath: "/docs",
 		scanStartPath: "pages/notes",
 		resolvePath: "/pages/notes/",
-		manualSortFileNameByPriority: ["js", "vue", "others"],
+		manualSortFileNameByPriority: ["tools", "others"],
 	},
 ];
 
@@ -80,17 +80,19 @@ export const nav: DefaultTheme.Config["nav"] = [
 	{ text: "首页", link: "/" },
 	{
 		text: "笔记",
-		link: "/pages/notes/js/library",
+		link: "/pages/notes/tools/imageCompressor",
 		activeMatch: "^/pages/notes",
 	},
 	{ text: "导航", link: "/pages/nav/index", activeMatch: "^/pages/nav" },
-	// {
-	// 	text: "外链",
-	// 	items: [
-	// 		{ text: "百度", link: "https://kaifa.baidu.com/" },
-	// 		{ text: "掘金", link: "https://juejin.cn/frontend" },
-	// 	],
-	// },
+	{
+		text: "外链",
+		items: [
+			{ text: "百度", link: "https://kaifa.baidu.com/" },
+			{ text: "掘金", link: "https://juejin.cn/frontend" },
+			{ text: "deepseek", link: "https://www.deepseek.com/" },
+			{ text: "问小白", link: "https://www.wenxiaobai.com" },
+		],
+	},
 ];
 
 // algolia配置
